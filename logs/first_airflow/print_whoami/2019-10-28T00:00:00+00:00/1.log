@@ -1,0 +1,26 @@
+[2019-10-29 14:23:56,976] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: first_airflow.print_whoami 2019-10-28T00:00:00+00:00 [queued]>
+[2019-10-29 14:23:56,988] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: first_airflow.print_whoami 2019-10-28T00:00:00+00:00 [queued]>
+[2019-10-29 14:23:56,988] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 14:23:56,988] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-29 14:23:56,988] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 14:23:56,994] {taskinstance.py:862} INFO - Executing <Task(BashOperator): print_whoami> on 2019-10-28T00:00:00+00:00
+[2019-10-29 14:23:56,994] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'first_airflow', 'print_whoami', '2019-10-28T00:00:00+00:00', '--job_id', '4', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/first_airflow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpxwy1ofl_']
+[2019-10-29 14:23:58,300] {base_task_runner.py:115} INFO - Job 4: Subtask print_whoami [2019-10-29 14:23:58,299] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-29 14:23:58,301] {base_task_runner.py:115} INFO - Job 4: Subtask print_whoami [2019-10-29 14:23:58,300] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/first_airflow.py
+[2019-10-29 14:23:58,318] {base_task_runner.py:115} INFO - Job 4: Subtask print_whoami [2019-10-29 14:23:58,317] {cli.py:545} INFO - Running <TaskInstance: first_airflow.print_whoami 2019-10-28T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-29 14:23:58,330] {bash_operator.py:81} INFO - Tmp dir root location: 
+ /var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T
+[2019-10-29 14:23:58,330] {bash_operator.py:91} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=first_airflow
+AIRFLOW_CTX_TASK_ID=print_whoami
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-28T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-28T00:00:00+00:00
+[2019-10-29 14:23:58,331] {bash_operator.py:105} INFO - Temporary script location: /var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/airflowtmpguzwa_sd/print_whoami1pr4xedr
+[2019-10-29 14:23:58,331] {bash_operator.py:115} INFO - Running command: whoami
+[2019-10-29 14:23:58,338] {bash_operator.py:124} INFO - Output:
+[2019-10-29 14:23:58,351] {bash_operator.py:128} INFO - hyuninsim
+[2019-10-29 14:23:58,352] {bash_operator.py:132} INFO - Command exited with return code 0
+[2019-10-29 14:24:01,967] {logging_mixin.py:112} INFO - [2019-10-29 14:24:01,966] {local_task_job.py:124} WARNING - Time since last heartbeat(0.00 s) < heartrate(5.0 s), sleeping for 4.995096 s
+[2019-10-29 14:24:06,963] {logging_mixin.py:112} INFO - [2019-10-29 14:24:06,962] {local_task_job.py:103} INFO - Task exited with return code 0

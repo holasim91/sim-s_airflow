@@ -1,0 +1,76 @@
+[2019-10-31 16:33:56,349] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-31T06:13:03.489664+00:00 [queued]>
+[2019-10-31 16:33:56,365] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-31T06:13:03.489664+00:00 [queued]>
+[2019-10-31 16:33:56,365] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:33:56,366] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-31 16:33:56,366] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:33:56,374] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): data_modeling_module> on 2019-10-31T06:13:03.489664+00:00
+[2019-10-31 16:33:56,374] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'data_modeling_module', '2019-10-31T06:13:03.489664+00:00', '--job_id', '45', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmphtafj7o1']
+[2019-10-31 16:33:57,661] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module [2019-10-31 16:33:57,661] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-31 16:33:57,662] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module [2019-10-31 16:33:57,661] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-31 16:33:59,022] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module [2019-10-31 16:33:59,021] {cli.py:545} INFO - Running <TaskInstance: kims_flow.data_modeling_module 2019-10-31T06:13:03.489664+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-31 16:33:59,031] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=data_modeling_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-31T06:13:03.489664+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2019-10-31T06:13:03.489664+00:00
+[2019-10-31 16:33:59,031] {logging_mixin.py:112} INFO - Data_modeling...
+[2019-10-31 16:33:59,032] {taskinstance.py:1058} ERROR - [Errno 2] File b'../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../data/news_data/news_key_words_add_ngram.csv'
+Traceback (most recent call last):
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 46, in data_modeling_module
+    lineterminator="\n",
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 702, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 429, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1853, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../data/news_data/news_key_words_add_ngram.csv'
+[2019-10-31 16:33:59,034] {taskinstance.py:1089} INFO - Marking task as FAILED.
+[2019-10-31 16:33:59,047] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module Traceback (most recent call last):
+[2019-10-31 16:33:59,047] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     args.func(args)
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     return f(*args, **kwargs)
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     _run(args, dag, ti)
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     pool=args.pool,
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     return func(*args, **kwargs)
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+[2019-10-31 16:33:59,048] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     result = task_copy.execute(context=context)
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     return_value = self.execute_callable()
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 46, in data_modeling_module
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     lineterminator="\n",
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 702, in parser_f
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     return _read(filepath_or_buffer, kwds)
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 429, in _read
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     parser = TextFileReader(filepath_or_buffer, **kwds)
+[2019-10-31 16:33:59,049] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 895, in __init__
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     self._make_engine(self.engine)
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     self._engine = CParserWrapper(self.f, **self.options)
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1853, in __init__
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module     self._reader = parsers.TextReader(src, **kwds)
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module   File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+[2019-10-31 16:33:59,050] {base_task_runner.py:115} INFO - Job 45: Subtask data_modeling_module FileNotFoundError: [Errno 2] File b'../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../data/news_data/news_key_words_add_ngram.csv'
+[2019-10-31 16:34:01,342] {logging_mixin.py:112} INFO - [2019-10-31 16:34:01,342] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994008 s
+[2019-10-31 16:34:06,343] {logging_mixin.py:112} INFO - [2019-10-31 16:34:06,342] {local_task_job.py:103} INFO - Task exited with return code 1

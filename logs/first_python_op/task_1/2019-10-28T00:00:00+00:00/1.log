@@ -1,0 +1,61 @@
+[2019-10-29 15:00:57,956] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: first_python_op.task_1 2019-10-28T00:00:00+00:00 [queued]>
+[2019-10-29 15:00:57,966] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: first_python_op.task_1 2019-10-28T00:00:00+00:00 [queued]>
+[2019-10-29 15:00:57,966] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 15:00:57,966] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-29 15:00:57,966] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 15:00:57,973] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): task_1> on 2019-10-28T00:00:00+00:00
+[2019-10-29 15:00:57,973] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'first_python_op', 'task_1', '2019-10-28T00:00:00+00:00', '--job_id', '8', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/first_python_op.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpfxzz4g4i']
+[2019-10-29 15:00:59,673] {base_task_runner.py:115} INFO - Job 8: Subtask task_1 [2019-10-29 15:00:59,672] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-29 15:00:59,674] {base_task_runner.py:115} INFO - Job 8: Subtask task_1 [2019-10-29 15:00:59,673] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/first_python_op.py
+[2019-10-29 15:00:59,692] {base_task_runner.py:115} INFO - Job 8: Subtask task_1 [2019-10-29 15:00:59,692] {cli.py:545} INFO - Running <TaskInstance: first_python_op.task_1 2019-10-28T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-29 15:00:59,705] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=first_python_op
+AIRFLOW_CTX_TASK_ID=task_1
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-28T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-28T00:00:00+00:00
+[2019-10-29 15:00:59,705] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 15:00:59,705] {logging_mixin.py:112} INFO - fruit_name: apple
+[2019-10-29 15:00:59,705] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 15:00:59,717] {logging_mixin.py:112} INFO - {'END_DATE': '2019-10-28',
+ 'conf': <airflow.configuration.AirflowConfigParser object at 0x107057a20>,
+ 'dag': <DAG: first_python_op>,
+ 'dag_run': <DagRun first_python_op @ 2019-10-28 00:00:00+00:00: scheduled__2019-10-28T00:00:00+00:00, externally triggered: False>,
+ 'ds': '2019-10-28',
+ 'ds_nodash': '20191028',
+ 'end_date': '2019-10-28',
+ 'execution_date': <Pendulum [2019-10-28T00:00:00+00:00]>,
+ 'inlets': [],
+ 'latest_date': '2019-10-28',
+ 'macros': <module 'airflow.macros' from '/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/macros/__init__.py'>,
+ 'next_ds': '2019-10-29',
+ 'next_ds_nodash': '20191029',
+ 'next_execution_date': <Pendulum [2019-10-29T00:00:00+00:00]>,
+ 'outlets': [],
+ 'params': {},
+ 'prev_ds': '2019-10-27',
+ 'prev_ds_nodash': '20191027',
+ 'prev_execution_date': <Pendulum [2019-10-27T00:00:00+00:00]>,
+ 'prev_execution_date_success': <Proxy at 0x1178711c8 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x1177a2d08>>,
+ 'prev_start_date_success': <Proxy at 0x117871208 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x1177ccd90>>,
+ 'run_id': 'scheduled__2019-10-28T00:00:00+00:00',
+ 'tables': None,
+ 'task': <Task(PythonOperator): task_1>,
+ 'task_instance': <TaskInstance: first_python_op.task_1 2019-10-28T00:00:00+00:00 [running]>,
+ 'task_instance_key_str': 'first_python_op__task_1__20191028',
+ 'templates_dict': None,
+ 'test_mode': False,
+ 'ti': <TaskInstance: first_python_op.task_1 2019-10-28T00:00:00+00:00 [running]>,
+ 'tomorrow_ds': '2019-10-29',
+ 'tomorrow_ds_nodash': '20191029',
+ 'ts': '2019-10-28T00:00:00+00:00',
+ 'ts_nodash': '20191028T000000',
+ 'ts_nodash_with_tz': '20191028T000000+0000',
+ 'var': {'json': None, 'value': None},
+ 'yesterday_ds': '2019-10-27',
+ 'yesterday_ds_nodash': '20191027'}
+[2019-10-29 15:00:59,717] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 15:00:59,718] {python_operator.py:114} INFO - Done. Returned value was: print complete!!!
+[2019-10-29 15:01:02,946] {logging_mixin.py:112} INFO - [2019-10-29 15:01:02,946] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994285 s
+[2019-10-29 15:01:07,944] {logging_mixin.py:112} INFO - [2019-10-29 15:01:07,943] {local_task_job.py:103} INFO - Task exited with return code 0

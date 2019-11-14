@@ -1,0 +1,64 @@
+[2019-10-31 16:33:11,991] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:33:12,006] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:33:12,006] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:33:12,006] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-31 16:33:12,006] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:33:12,013] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): data_preprocessing_module> on 2019-10-30T00:00:00+00:00
+[2019-10-31 16:33:12,014] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'data_preprocessing_module', '2019-10-30T00:00:00+00:00', '--job_id', '42', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpr9wmc3nv']
+[2019-10-31 16:33:13,580] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:33:13,579] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-31 16:33:13,580] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:33:13,579] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-31 16:33:15,068] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:33:15,068] {cli.py:545} INFO - Running <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-31 16:33:15,079] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=data_preprocessing_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-30T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-30T00:00:00+00:00
+[2019-10-31 16:33:15,079] {logging_mixin.py:112} INFO - data_preprocessing
+[2019-10-31 16:33:15,079] {logging_mixin.py:112} INFO - WTFFFFF: /Users/hyuninsim/airflow
+[2019-10-31 16:33:15,086] {logging_mixin.py:112} INFO - total Length:  28
+[2019-10-31 16:33:15,248] {logging_mixin.py:112} INFO - WGGGGGGG: /Users/hyuninsim/airflow
+[2019-10-31 16:33:16,937] {logging_mixin.py:112} INFO - ========================================================================================================================================================================================================
+[2019-10-31 16:33:16,937] {logging_mixin.py:112} INFO - File_NAME: ./data/news_data/news_key_words_add_ngram.csv
+[2019-10-31 16:33:16,944] {python_operator.py:114} INFO - Done. Returned value was:    type  ...                                              ngram
+0  news  ...  최대/nng;규모/nng,규모/nng;스타트업/nng,스타트업/nng;지원/nng,...
+1  news  ...  국세/nng;행정/nng,행정/nng;시스템/nng,시스템/nng;비교/nng,비교...
+
+[2 rows x 10 columns]
+[2019-10-31 16:33:16,980] {logging_mixin.py:112} INFO - [2019-10-31 16:33:16,979] {local_task_job.py:167} WARNING - State of this instance has been externally set to success. Taking the poison pill.
+[2019-10-31 16:33:16,985] {helpers.py:308} INFO - Sending Signals.SIGTERM to GPID 895
+[2019-10-31 16:33:17,017] {helpers.py:286} INFO - Process psutil.Process(pid=900, status='terminated') (900) terminated with exit code None
+[2019-10-31 16:33:17,018] {helpers.py:286} INFO - Process psutil.Process(pid=895, status='terminated') (895) terminated with exit code -15
+[2019-10-31 16:33:17,018] {logging_mixin.py:112} INFO - [2019-10-31 16:33:17,018] {local_task_job.py:124} WARNING - Time since last heartbeat(0.04 s) < heartrate(5.0 s), sleeping for 4.955366 s
+[2019-10-31 16:33:21,975] {logging_mixin.py:112} INFO - [2019-10-31 16:33:21,974] {local_task_job.py:103} INFO - Task exited with return code 0
+[2019-10-31 16:37:28,441] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:37:28,453] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:37:28,453] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:37:28,454] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-31 16:37:28,454] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:37:28,459] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): data_preprocessing_module> on 2019-10-30T00:00:00+00:00
+[2019-10-31 16:37:28,459] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'data_preprocessing_module', '2019-10-30T00:00:00+00:00', '--job_id', '42', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpp3kkto6n']
+[2019-10-31 16:37:30,002] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:37:30,001] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-31 16:37:30,002] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:37:30,002] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-31 16:37:31,678] {base_task_runner.py:115} INFO - Job 42: Subtask data_preprocessing_module [2019-10-31 16:37:31,678] {cli.py:545} INFO - Running <TaskInstance: kims_flow.data_preprocessing_module 2019-10-30T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-31 16:37:31,690] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=data_preprocessing_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-30T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-30T00:00:00+00:00
+[2019-10-31 16:37:31,690] {logging_mixin.py:112} INFO - data_preprocessing
+[2019-10-31 16:37:31,690] {logging_mixin.py:112} INFO - WTFFFFF: /Users/hyuninsim/airflow
+[2019-10-31 16:37:31,696] {logging_mixin.py:112} INFO - total Length:  28
+[2019-10-31 16:37:31,893] {logging_mixin.py:112} INFO - WGGGGGGG: /Users/hyuninsim/airflow
+[2019-10-31 16:37:33,431] {logging_mixin.py:112} INFO - [2019-10-31 16:37:33,431] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994014 s
+[2019-10-31 16:37:33,902] {logging_mixin.py:112} INFO - ========================================================================================================================================================================================================
+[2019-10-31 16:37:33,914] {logging_mixin.py:112} INFO - File_NAME: ./data/news_data/news_key_words_add_ngram.csv
+[2019-10-31 16:37:33,941] {python_operator.py:114} INFO - Done. Returned value was:    type  ...                                              ngram
+0  news  ...  최대/nng;규모/nng,규모/nng;스타트업/nng,스타트업/nng;지원/nng,...
+1  news  ...  국세/nng;행정/nng,행정/nng;시스템/nng,시스템/nng;비교/nng,비교...
+
+[2 rows x 10 columns]
+[2019-10-31 16:37:38,426] {logging_mixin.py:112} INFO - [2019-10-31 16:37:38,426] {local_task_job.py:103} INFO - Task exited with return code 0

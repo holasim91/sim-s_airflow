@@ -1,0 +1,67 @@
+[2019-10-29 17:17:05,849] {taskinstance.py:624} INFO - Dependencies not met for <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [scheduled]>, dependency 'Task Instance State' FAILED: Task is in the 'scheduled' state which is not a valid state for execution. The task must be cleared in order to be run.
+[2019-10-29 17:17:05,850] {logging_mixin.py:112} INFO - [2019-10-29 17:17:05,850] {local_task_job.py:91} INFO - Task is not able to be run
+[2019-10-29 17:17:08,452] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [queued]>
+[2019-10-29 17:17:08,465] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [queued]>
+[2019-10-29 17:17:08,465] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 17:17:08,465] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-29 17:17:08,465] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-29 17:17:08,471] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): task_3> on 2019-10-29T08:16:24.624103+00:00
+[2019-10-29 17:17:08,472] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'task_3', '2019-10-29T08:16:24.624103+00:00', '--job_id', '20', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpg9oad2g6']
+[2019-10-29 17:17:10,457] {base_task_runner.py:115} INFO - Job 20: Subtask task_3 [2019-10-29 17:17:10,456] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-29 17:17:10,458] {base_task_runner.py:115} INFO - Job 20: Subtask task_3 [2019-10-29 17:17:10,457] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-29 17:17:10,512] {taskinstance.py:624} INFO - Dependencies not met for <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [running]>, dependency 'Task Instance State' FAILED: Task is in the 'running' state which is not a valid state for execution. The task must be cleared in order to be run.
+[2019-10-29 17:17:10,515] {logging_mixin.py:112} INFO - [2019-10-29 17:17:10,515] {local_task_job.py:91} INFO - Task is not able to be run
+[2019-10-29 17:17:11,643] {base_task_runner.py:115} INFO - Job 20: Subtask task_3 [2019-10-29 17:17:11,642] {cli.py:545} INFO - Running <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-29 17:17:11,651] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=task_3
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T08:16:24.624103+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2019-10-29T08:16:24.624103+00:00
+[2019-10-29 17:17:11,651] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 17:17:11,651] {logging_mixin.py:112} INFO - seconds:10
+[2019-10-29 17:17:11,651] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 17:17:11,659] {logging_mixin.py:112} INFO - {'END_DATE': '2019-10-29',
+ 'conf': <airflow.configuration.AirflowConfigParser object at 0x10fd75da0>,
+ 'dag': <DAG: kims_flow>,
+ 'dag_run': <DagRun kims_flow @ 2019-10-29 08:16:24.624103+00:00: manual__2019-10-29T08:16:24.624103+00:00, externally triggered: True>,
+ 'ds': '2019-10-29',
+ 'ds_nodash': '20191029',
+ 'end_date': '2019-10-29',
+ 'execution_date': <Pendulum [2019-10-29T08:16:24.624103+00:00]>,
+ 'inlets': [],
+ 'latest_date': '2019-10-29',
+ 'macros': <module 'airflow.macros' from '/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/macros/__init__.py'>,
+ 'next_ds': '2019-10-29',
+ 'next_ds_nodash': '20191029',
+ 'next_execution_date': <Pendulum [2019-10-29T08:16:24.624103+00:00]>,
+ 'outlets': [],
+ 'params': {},
+ 'prev_ds': '2019-10-29',
+ 'prev_ds_nodash': '20191029',
+ 'prev_execution_date': <Pendulum [2019-10-29T08:16:24.624103+00:00]>,
+ 'prev_execution_date_success': <Proxy at 0x1a27023808 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x1a26fd3bf8>>,
+ 'prev_start_date_success': <Proxy at 0x1a27023848 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x1a27013d08>>,
+ 'run_id': 'manual__2019-10-29T08:16:24.624103+00:00',
+ 'tables': None,
+ 'task': <Task(PythonOperator): task_3>,
+ 'task_instance': <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [running]>,
+ 'task_instance_key_str': 'kims_flow__task_3__20191029',
+ 'templates_dict': None,
+ 'test_mode': False,
+ 'ti': <TaskInstance: kims_flow.task_3 2019-10-29T08:16:24.624103+00:00 [running]>,
+ 'tomorrow_ds': '2019-10-30',
+ 'tomorrow_ds_nodash': '20191030',
+ 'ts': '2019-10-29T08:16:24.624103+00:00',
+ 'ts_nodash': '20191029T081624',
+ 'ts_nodash_with_tz': '20191029T081624.624103+0000',
+ 'var': {'json': None, 'value': None},
+ 'yesterday_ds': '2019-10-28',
+ 'yesterday_ds_nodash': '20191028'}
+[2019-10-29 17:17:11,659] {logging_mixin.py:112} INFO - ============================================================
+[2019-10-29 17:17:11,659] {logging_mixin.py:112} INFO - sleeping...
+[2019-10-29 17:17:13,454] {logging_mixin.py:112} INFO - [2019-10-29 17:17:13,453] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993673 s
+[2019-10-29 17:17:18,467] {logging_mixin.py:112} INFO - [2019-10-29 17:17:18,467] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993995 s
+[2019-10-29 17:17:21,660] {python_operator.py:114} INFO - Done. Returned value was: sleep well!!!
+[2019-10-29 17:17:23,468] {logging_mixin.py:112} INFO - [2019-10-29 17:17:23,467] {local_task_job.py:103} INFO - Task exited with return code 0

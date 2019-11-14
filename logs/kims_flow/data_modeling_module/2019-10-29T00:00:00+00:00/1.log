@@ -1,0 +1,1468 @@
+[2019-10-30 15:01:12,848] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:01:12,882] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:01:12,883] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:01:12,883] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 15:01:12,883] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:01:12,921] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): data_modeling_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 15:01:12,922] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'data_modeling_module', '2019-10-29T00:00:00+00:00', '--job_id', '35', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpiw9qfuqa']
+[2019-10-30 15:01:17,784] {logging_mixin.py:112} INFO - [2019-10-30 15:01:17,784] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991894 s
+[2019-10-30 15:01:18,759] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module [2019-10-30 15:01:18,758] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 15:01:18,760] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module [2019-10-30 15:01:18,759] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 15:01:22,798] {logging_mixin.py:112} INFO - [2019-10-30 15:01:22,798] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991368 s
+[2019-10-30 15:01:24,545] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module [2019-10-30 15:01:24,544] {cli.py:545} INFO - Running <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 15:01:24,570] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=data_modeling_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 15:01:24,571] {logging_mixin.py:112} INFO - Data_modeling...
+[2019-10-30 15:01:24,572] {taskinstance.py:1058} ERROR - [Errno 2] File b'../../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../../data/news_data/news_key_words_add_ngram.csv'
+Traceback (most recent call last):
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 46, in data_modeling_module
+    lineterminator="\n",
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 702, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 429, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1853, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'../../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../../data/news_data/news_key_words_add_ngram.csv'
+[2019-10-30 15:01:24,580] {taskinstance.py:1089} INFO - Marking task as FAILED.
+[2019-10-30 15:01:24,646] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module Traceback (most recent call last):
+[2019-10-30 15:01:24,646] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+[2019-10-30 15:01:24,646] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     args.func(args)
+[2019-10-30 15:01:24,646] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     return f(*args, **kwargs)
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     _run(args, dag, ti)
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     pool=args.pool,
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     return func(*args, **kwargs)
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     result = task_copy.execute(context=context)
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     return_value = self.execute_callable()
+[2019-10-30 15:01:24,647] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 46, in data_modeling_module
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     lineterminator="\n",
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 702, in parser_f
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     return _read(filepath_or_buffer, kwds)
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 429, in _read
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     parser = TextFileReader(filepath_or_buffer, **kwds)
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 895, in __init__
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     self._make_engine(self.engine)
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1122, in _make_engine
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     self._engine = CParserWrapper(self.f, **self.options)
+[2019-10-30 15:01:24,648] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py", line 1853, in __init__
+[2019-10-30 15:01:24,649] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module     self._reader = parsers.TextReader(src, **kwds)
+[2019-10-30 15:01:24,649] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "pandas/_libs/parsers.pyx", line 387, in pandas._libs.parsers.TextReader.__cinit__
+[2019-10-30 15:01:24,649] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module   File "pandas/_libs/parsers.pyx", line 705, in pandas._libs.parsers.TextReader._setup_parser_source
+[2019-10-30 15:01:24,649] {base_task_runner.py:115} INFO - Job 35: Subtask data_modeling_module FileNotFoundError: [Errno 2] File b'../../data/news_data/news_key_words_add_ngram.csv' does not exist: b'../../data/news_data/news_key_words_add_ngram.csv'
+[2019-10-30 15:01:27,792] {logging_mixin.py:112} INFO - [2019-10-30 15:01:27,792] {local_task_job.py:103} INFO - Task exited with return code 1
+[2019-10-30 15:18:36,928] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:18:37,024] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:18:37,024] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:18:37,024] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 15:18:37,025] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:18:37,054] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): data_modeling_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 15:18:37,054] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'data_modeling_module', '2019-10-29T00:00:00+00:00', '--job_id', '37', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpqb8g43eh']
+[2019-10-30 15:18:41,865] {logging_mixin.py:112} INFO - [2019-10-30 15:18:41,864] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993537 s
+[2019-10-30 15:18:42,959] {base_task_runner.py:115} INFO - Job 37: Subtask data_modeling_module [2019-10-30 15:18:42,958] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 15:18:42,960] {base_task_runner.py:115} INFO - Job 37: Subtask data_modeling_module [2019-10-30 15:18:42,959] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 15:18:46,879] {logging_mixin.py:112} INFO - [2019-10-30 15:18:46,879] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993746 s
+[2019-10-30 15:18:49,240] {base_task_runner.py:115} INFO - Job 37: Subtask data_modeling_module [2019-10-30 15:18:49,240] {cli.py:545} INFO - Running <TaskInstance: kims_flow.data_modeling_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 15:18:49,256] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=data_modeling_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 15:18:49,256] {logging_mixin.py:112} INFO - Data_modeling...
+[2019-10-30 15:18:49,366] {logging_mixin.py:112} INFO - MODELING!!!! Length: 28
+[2019-10-30 15:18:49,367] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,367] {dictionary.py:205} INFO - adding document #0 to Dictionary(0 unique tokens: [])
+[2019-10-30 15:18:49,407] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,407] {dictionary.py:212} INFO - built Dictionary(1514 unique tokens: ['계획/nng', '관계자/nng', '교류/nng', '규모/nng', '글로벌/nng']...) from 28 documents (total 5468 corpus positions)
+[2019-10-30 15:18:49,414] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,414] {tfidfmodel.py:454} INFO - collecting document frequencies
+[2019-10-30 15:18:49,415] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,414] {tfidfmodel.py:460} INFO - PROGRESS: processing document #0
+[2019-10-30 15:18:49,416] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,416] {tfidfmodel.py:473} INFO - calculating IDF weights for 28 documents and 1514 features (3397 matrix non-zeros)
+[2019-10-30 15:18:49,442] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,442] {ldamodel.py:557} INFO - using symmetric alpha at 0.2
+[2019-10-30 15:18:49,443] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,442] {ldamodel.py:557} INFO - using symmetric eta at 0.2
+[2019-10-30 15:18:49,443] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,443] {ldamodel.py:481} INFO - using serial LDA version on this node
+[2019-10-30 15:18:49,445] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,445] {ldamodel.py:929} INFO - running online (single-pass) LDA training, 5 topics, 1 passes over the supplied corpus of 28 documents, updating model once every 28 documents, evaluating perplexity every 28 documents, iterating 50x with a convergence threshold of 0.001000
+[2019-10-30 15:18:49,446] {logging_mixin.py:112} INFO - [2019-10-30 15:18:49,445] {ldamodel.py:934} WARNING - too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+[2019-10-30 15:18:51,890] {logging_mixin.py:112} INFO - [2019-10-30 15:18:51,890] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994016 s
+[2019-10-30 15:18:55,151] {logging_mixin.py:112} INFO - [2019-10-30 15:18:55,151] {ldamodel.py:824} INFO - -33.582 per-word bound, 12861436074.9 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:18:55,151] {logging_mixin.py:112} INFO - [2019-10-30 15:18:55,151] {ldamodel.py:978} INFO - PROGRESS: pass 0, at document #28/28
+[2019-10-30 15:18:56,899] {logging_mixin.py:112} INFO - [2019-10-30 15:18:56,899] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993782 s
+[2019-10-30 15:19:00,222] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING - TypeError: must be real number, not str
+[2019-10-30 15:19:00,226] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:00,237] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:00,238] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: (0, '\x1b[1m0.2\x1b[0m', '\x1b[1m0.003*"신고/nng" + 0.002*"대출/nng" + 0.002*"사업자/nng" + 0.002*"텍스트/nng" + 0.002*"물류/nng" + 0.002*"분석/nng" + 0.002*"투자/nng" + 0.002*"규제/nng" + 0.002*"뱅킹/nng" + 0.002*"자료/nng"\x1b[0m')
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:00,239] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING - TypeError: must be real number, not str
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:00,240] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:00,241] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:00,242] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: (1, '\x1b[1m0.2\x1b[0m', '\x1b[1m0.003*"인턴/nng" + 0.002*"법안/nng" + 0.002*"기획/nng" + 0.002*"신고/nng" + 0.002*"디지털금융/nng" + 0.002*"대학생/nng" + 0.002*"근무/nng" + 0.002*"최종/nng" + 0.002*"사업자/nng" + 0.002*"프로그램/nng"\x1b[0m')
+[2019-10-30 15:19:00,242] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:00,242] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,242] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING - TypeError: must be real number, not str
+[2019-10-30 15:19:00,243] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:00,244] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:00,245] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: (2, '\x1b[1m0.2\x1b[0m', '\x1b[1m0.003*"블록체인/nng" + 0.002*"일손/nng" + 0.002*"카드/nng" + 0.002*"보험/nng" + 0.002*"물류/nng" + 0.002*"벤처기업/nng" + 0.002*"공식/nng" + 0.002*"임직원/nng" + 0.002*"그룹/nng" + 0.002*"등록/nng"\x1b[0m')
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:00,246] {logging_mixin.py:112} WARNING - TypeError: must be real number, not str
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:00,247] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:00,248] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: (3, '\x1b[1m0.2\x1b[0m', '\x1b[1m0.003*"송금/nng" + 0.002*"산탄데르은행/nng" + 0.002*"매칭/nng" + 0.002*"해외/nng" + 0.002*"수출입/nng" + 0.001*"우대/nng" + 0.001*"환율/nng" + 0.001*"금액/nng" + 0.001*"판로/nng" + 0.001*"희망/nng"\x1b[0m')
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,249] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING - TypeError: must be real number, not str
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:00,250] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:00,251] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:00,252] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:00,252] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: (4, '\x1b[1m0.2\x1b[0m', '\x1b[1m0.003*"용어/nng" + 0.002*"공인/nng" + 0.002*"납세자/nng" + 0.002*"스타트업/nng" + 0.002*"패스/nng" + 0.002*"프로젝트/nng" + 0.002*"유망/nng" + 0.002*"분석/nng" + 0.002*"방침/nng" + 0.002*"데이/nng"\x1b[0m')
+[2019-10-30 15:19:00,252] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,252] {ldamodel.py:1049} INFO - topic diff=2.890497, rho=1.000000
+[2019-10-30 15:19:00,255] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,254] {probability_estimation.py:155} INFO - using ParallelWordOccurrenceAccumulator(processes=3, batch_size=64) to estimate probabilities from sliding windows
+[2019-10-30 15:19:00,294] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,291] {text_analysis.py:506} INFO - 1 batches submitted to accumulate stats from 64 documents (2416 virtual)
+[2019-10-30 15:19:00,297] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,295] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:00,297] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,295] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:00,299] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,298] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:00,301] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,300] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:00,546] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,526] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:00,556] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,556] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:00,573] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,573] {text_analysis.py:530} INFO - 3 accumulators retrieved from output queue
+[2019-10-30 15:19:00,574] {taskinstance.py:905} ERROR - Received SIGTERM. Terminating subprocesses.
+[2019-10-30 15:19:00,580] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:00,581] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/util.py", line 265, in _run_finalizers
+    finalizer()
+[2019-10-30 15:19:00,581] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/util.py", line 189, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+[2019-10-30 15:19:00,581] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/queues.py", line 192, in _finalize_join
+    thread.join()
+[2019-10-30 15:19:00,582] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/threading.py", line 1032, in join
+    self._wait_for_tstate_lock()
+[2019-10-30 15:19:00,582] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/threading.py", line 1048, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+[2019-10-30 15:19:00,583] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 907, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+[2019-10-30 15:19:00,583] {logging_mixin.py:112} WARNING - airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2019-10-30 15:19:00,588] {logging_mixin.py:112} INFO - [2019-10-30 15:19:00,588] {text_analysis.py:552} INFO - accumulated word occurrence stats for 2630 virtual documents
+[2019-10-30 15:19:01,912] {logging_mixin.py:112} INFO - [2019-10-30 15:19:01,912] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993933 s
+[2019-10-30 15:19:03,157] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,157] {ldamodel.py:824} INFO - -10.206 per-word bound, 1180.9 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:03,157] {logging_mixin.py:112} INFO - 5
+[2019-10-30 15:19:03,158] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,158] {ldamodel.py:557} INFO - using symmetric alpha at 0.1
+[2019-10-30 15:19:03,158] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,158] {ldamodel.py:557} INFO - using symmetric eta at 0.1
+[2019-10-30 15:19:03,159] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,159] {ldamodel.py:481} INFO - using serial LDA version on this node
+[2019-10-30 15:19:03,163] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,163] {ldamodel.py:929} INFO - running online (single-pass) LDA training, 10 topics, 1 passes over the supplied corpus of 28 documents, updating model once every 28 documents, evaluating perplexity every 28 documents, iterating 50x with a convergence threshold of 0.001000
+[2019-10-30 15:19:03,164] {logging_mixin.py:112} INFO - [2019-10-30 15:19:03,163] {ldamodel.py:934} WARNING - too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+[2019-10-30 15:19:06,925] {logging_mixin.py:112} INFO - [2019-10-30 15:19:06,924] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993905 s
+[2019-10-30 15:19:07,009] {logging_mixin.py:112} INFO - [2019-10-30 15:19:07,009] {ldamodel.py:824} INFO - -92.019 per-word bound, 5016921734806477474747121664.0 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:07,009] {logging_mixin.py:112} INFO - [2019-10-30 15:19:07,009] {ldamodel.py:978} INFO - PROGRESS: pass 0, at document #28/28
+[2019-10-30 15:19:11,411] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:11,411] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:11,411] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:11,411] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:11,412] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:11,413] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:11,414] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m0\x1b[0m', '\x1b[1m0.1\x1b[0m', '\x1b[1m0.006*"신고/nng" + 0.004*"사업자/nng" + 0.003*"관세/nng" + 0.003*"매출/nng" + 0.003*"c&c/nng" + 0.002*"자료/nng" + 0.002*"청장/nng" + 0.002*"납부/nng" + 0.002*"수입/nng" + 0.002*"증가/nng"\x1b[0m')
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,415] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:11,416] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:11,416] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:11,416] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:11,416] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:11,416] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:11,417] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:11,418] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:11,418] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:11,418] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m7\x1b[0m', '\x1b[1m0.1\x1b[0m', '\x1b[1m0.004*"공인/nng" + 0.003*"투자/nng" + 0.003*"패스/nng" + 0.003*"대학생/nng" + 0.003*"제휴/nng" + 0.003*"증서/nng" + 0.002*"아카데미/nng" + 0.002*"심화/nng" + 0.002*"인증/nng" + 0.002*"스타트업/nng"\x1b[0m')
+[2019-10-30 15:19:11,418] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:11,418] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:11,419] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:11,420] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:11,421] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m6\x1b[0m', '\x1b[1m0.1\x1b[0m', '\x1b[1m0.005*"용어/nng" + 0.004*"신고/nng" + 0.003*"물류/nng" + 0.003*"사업자/nng" + 0.002*"기획/nng" + 0.002*"인턴/nng" + 0.002*"분석/nng" + 0.002*"안내문/nng" + 0.002*"자료/nng" + 0.002*"디지털금융/nng"\x1b[0m')
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:11,422] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:11,423] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:11,424] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m2\x1b[0m', '\x1b[1m0.1\x1b[0m', '\x1b[1m0.003*"규제/nng" + 0.003*"자문/nng" + 0.003*"현장/nng" + 0.002*"문단/nng" + 0.002*"지원/nng" + 0.001*"성과/nng" + 0.001*"준수/nng" + 0.001*"짜여/vv" + 0.001*"효익/nng" + 0.001*"경력/nng"\x1b[0m')
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:11,425] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:11,426] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m5\x1b[0m', '\x1b[1m0.1\x1b[0m', '\x1b[1m0.004*"블록체인/nng" + 0.004*"일손/nng" + 0.003*"물류/nng" + 0.003*"공식/nng" + 0.003*"임직원/nng" + 0.002*"피칭/nng" + 0.002*"데이/nng" + 0.002*"참여/nng" + 0.002*"투자/nng" + 0.002*"인턴/nng"\x1b[0m')
+[2019-10-30 15:19:11,427] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,427] {ldamodel.py:1049} INFO - topic diff=7.050977, rho=1.000000
+[2019-10-30 15:19:11,431] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,431] {probability_estimation.py:155} INFO - using ParallelWordOccurrenceAccumulator(processes=3, batch_size=64) to estimate probabilities from sliding windows
+[2019-10-30 15:19:11,464] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,462] {text_analysis.py:506} INFO - 1 batches submitted to accumulate stats from 64 documents (2416 virtual)
+[2019-10-30 15:19:11,467] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,466] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:11,468] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,466] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:11,469] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,469] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:11,469] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,469] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:11,935] {logging_mixin.py:112} INFO - [2019-10-30 15:19:11,935] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993902 s
+[2019-10-30 15:19:12,122] {logging_mixin.py:112} INFO - [2019-10-30 15:19:12,105] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:12,148] {logging_mixin.py:112} INFO - [2019-10-30 15:19:12,123] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:12,171] {logging_mixin.py:112} INFO - [2019-10-30 15:19:12,170] {text_analysis.py:530} INFO - 3 accumulators retrieved from output queue
+[2019-10-30 15:19:12,196] {logging_mixin.py:112} INFO - [2019-10-30 15:19:12,195] {text_analysis.py:552} INFO - accumulated word occurrence stats for 2630 virtual documents
+[2019-10-30 15:19:16,229] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,229] {ldamodel.py:824} INFO - -12.629 per-word bound, 6335.9 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:16,229] {logging_mixin.py:112} INFO - 10
+[2019-10-30 15:19:16,230] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,230] {ldamodel.py:557} INFO - using symmetric alpha at 0.06666666666666667
+[2019-10-30 15:19:16,230] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,230] {ldamodel.py:557} INFO - using symmetric eta at 0.06666666666666667
+[2019-10-30 15:19:16,231] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,231] {ldamodel.py:481} INFO - using serial LDA version on this node
+[2019-10-30 15:19:16,235] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,235] {ldamodel.py:929} INFO - running online (single-pass) LDA training, 15 topics, 1 passes over the supplied corpus of 28 documents, updating model once every 28 documents, evaluating perplexity every 28 documents, iterating 50x with a convergence threshold of 0.001000
+[2019-10-30 15:19:16,235] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,235] {ldamodel.py:934} WARNING - too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+[2019-10-30 15:19:16,947] {logging_mixin.py:112} INFO - [2019-10-30 15:19:16,947] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992556 s
+[2019-10-30 15:19:20,107] {logging_mixin.py:112} INFO - [2019-10-30 15:19:20,107] {ldamodel.py:824} INFO - -167.787 per-word bound, 322719106104219205000464968968830795829497777094656.0 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:20,107] {logging_mixin.py:112} INFO - [2019-10-30 15:19:20,107] {ldamodel.py:978} INFO - PROGRESS: pass 0, at document #28/28
+[2019-10-30 15:19:21,959] {logging_mixin.py:112} INFO - [2019-10-30 15:19:21,959] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993758 s
+[2019-10-30 15:19:24,158] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:24,158] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:24,158] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:24,159] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:24,160] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:24,161] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m4\x1b[0m', '\x1b[1m0.06666667\x1b[0m', '\x1b[1m0.004*"인턴/nng" + 0.003*"디지털금융/nng" + 0.003*"근무/nng" + 0.003*"최종/nng" + 0.003*"합격자/nng" + 0.003*"기획/nng" + 0.003*"프로그램/nng" + 0.002*"모집/nng" + 0.002*"발전/nng" + 0.002*"수행/nng"\x1b[0m')
+[2019-10-30 15:19:24,162] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:24,162] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:24,162] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:24,162] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:24,162] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:24,163] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:24,164] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:24,165] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:24,165] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:24,165] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:24,165] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m13\x1b[0m', '\x1b[1m0.06666667\x1b[0m', '\x1b[1m0.005*"신고/nng" + 0.004*"사업자/nng" + 0.004*"공식/nng" + 0.003*"안내문/nng" + 0.003*"자료/nng" + 0.003*"그룹/nng" + 0.003*"인력/nng" + 0.003*"타운/nng" + 0.003*"착공/nng" + 0.003*"국세청/nng"\x1b[0m')
+[2019-10-30 15:19:24,165] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:24,166] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:24,167] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:24,168] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m2\x1b[0m', '\x1b[1m0.06666667\x1b[0m', '\x1b[1m0.004*"규제/nng" + 0.004*"벤처기업/nng" + 0.004*"자문/nng" + 0.003*"현장/nng" + 0.003*"인턴/nng" + 0.003*"기획/nng" + 0.003*"지원/nng" + 0.003*"공모전/nng" + 0.003*"중소/nng" + 0.003*"디지털금융/nng"\x1b[0m')
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,169] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,170] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:24,170] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:24,170] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:24,170] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:24,171] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:24,172] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m0\x1b[0m', '\x1b[1m0.06666667\x1b[0m', '\x1b[1m0.001*"신고/nng" + 0.001*"카드/nng" + 0.001*"인턴/nng" + 0.001*"용어/nng" + 0.001*"금융/nng" + 0.001*"스타트업/nng" + 0.001*"분석/nng" + 0.001*"이용/nng" + 0.001*"뱅킹/nng" + 0.001*"지원/nng"\x1b[0m')
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:24,173] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:24,174] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:24,175] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:24,176] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m6\x1b[0m', '\x1b[1m0.06666667\x1b[0m', '\x1b[1m0.005*"공인/nng" + 0.005*"납세자/nng" + 0.004*"패스/nng" + 0.004*"방침/nng" + 0.003*"증서/nng" + 0.003*"국세청/nng" + 0.003*"인증/nng" + 0.003*"지문/nng" + 0.003*"세금/nng" + 0.003*"신고/nng"\x1b[0m')
+[2019-10-30 15:19:24,176] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,176] {ldamodel.py:1049} INFO - topic diff=11.490880, rho=1.000000
+[2019-10-30 15:19:24,181] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,181] {probability_estimation.py:155} INFO - using ParallelWordOccurrenceAccumulator(processes=3, batch_size=64) to estimate probabilities from sliding windows
+[2019-10-30 15:19:24,217] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,215] {text_analysis.py:506} INFO - 1 batches submitted to accumulate stats from 64 documents (2416 virtual)
+[2019-10-30 15:19:24,220] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,218] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:24,220] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,219] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:24,222] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,222] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:24,222] {logging_mixin.py:112} INFO - [2019-10-30 15:19:24,222] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:25,210] {logging_mixin.py:112} INFO - [2019-10-30 15:19:25,209] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:25,253] {logging_mixin.py:112} INFO - [2019-10-30 15:19:25,211] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:25,287] {logging_mixin.py:112} INFO - [2019-10-30 15:19:25,286] {text_analysis.py:530} INFO - 3 accumulators retrieved from output queue
+[2019-10-30 15:19:25,320] {logging_mixin.py:112} INFO - [2019-10-30 15:19:25,320] {text_analysis.py:552} INFO - accumulated word occurrence stats for 2630 virtual documents
+[2019-10-30 15:19:26,971] {logging_mixin.py:112} INFO - [2019-10-30 15:19:26,971] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993679 s
+[2019-10-30 15:19:30,553] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,553] {ldamodel.py:824} INFO - -14.767 per-word bound, 27882.7 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:30,553] {logging_mixin.py:112} INFO - 15
+[2019-10-30 15:19:30,553] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,553] {ldamodel.py:557} INFO - using symmetric alpha at 0.05
+[2019-10-30 15:19:30,554] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,554] {ldamodel.py:557} INFO - using symmetric eta at 0.05
+[2019-10-30 15:19:30,554] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,554] {ldamodel.py:481} INFO - using serial LDA version on this node
+[2019-10-30 15:19:30,560] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,560] {ldamodel.py:929} INFO - running online (single-pass) LDA training, 20 topics, 1 passes over the supplied corpus of 28 documents, updating model once every 28 documents, evaluating perplexity every 28 documents, iterating 50x with a convergence threshold of 0.001000
+[2019-10-30 15:19:30,560] {logging_mixin.py:112} INFO - [2019-10-30 15:19:30,560] {ldamodel.py:934} WARNING - too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+[2019-10-30 15:19:31,984] {logging_mixin.py:112} INFO - [2019-10-30 15:19:31,984] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99348 s
+[2019-10-30 15:19:34,052] {logging_mixin.py:112} INFO - [2019-10-30 15:19:34,052] {ldamodel.py:824} INFO - -255.209 per-word bound, 66899821169266284896292957638523903026467317579776642301532758989662408671232.0 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:34,053] {logging_mixin.py:112} INFO - [2019-10-30 15:19:34,052] {ldamodel.py:978} INFO - PROGRESS: pass 0, at document #28/28
+[2019-10-30 15:19:36,663] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:36,663] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:36,663] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:36,663] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:36,664] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:36,665] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:36,666] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m19\x1b[0m', '\x1b[1m0.05\x1b[0m', '\x1b[1m0.001*"투자설명회/nng" + 0.001*"커머스/nng" + 0.001*"기획/nng" + 0.001*"급여/nng" + 0.001*"근무/nng" + 0.001*"공채/nng" + 0.001*"경험/nng" + 0.001*"가산점/nng" + 0.001*"회계/nng" + 0.001*"피칭/nng"\x1b[0m')
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,667] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:36,668] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:36,669] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:36,670] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:36,670] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:36,670] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m1\x1b[0m', '\x1b[1m0.05\x1b[0m', '\x1b[1m0.005*"벤처기업/nng" + 0.004*"피칭/nng" + 0.004*"데이/nng" + 0.004*"투자/nng" + 0.004*"공모전/nng" + 0.004*"중소/nng" + 0.003*"심사/nng" + 0.003*"농협/nng" + 0.003*"멘토링/nng" + 0.003*"유치/nng"\x1b[0m')
+[2019-10-30 15:19:36,670] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:36,670] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:36,671] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:36,672] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:36,673] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m12\x1b[0m', '\x1b[1m0.05\x1b[0m', '\x1b[1m0.006*"납세자/nng" + 0.005*"방침/nng" + 0.004*"국세청/nng" + 0.003*"세금/nng" + 0.003*"신고/nng" + 0.003*"안내/nng" + 0.002*"납세/nng" + 0.002*"성실/nng" + 0.002*"예정/nng" + 0.002*"분석/nng"\x1b[0m')
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:36,674] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:36,675] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:36,676] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:36,677] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m5\x1b[0m', '\x1b[1m0.05\x1b[0m', '\x1b[1m0.008*"송금/nng" + 0.007*"산탄데르은행/nng" + 0.006*"매칭/nng" + 0.005*"해외/nng" + 0.005*"수출입/nng" + 0.003*"우대/nng" + 0.003*"환율/nng" + 0.003*"금액/nng" + 0.003*"판로/nng" + 0.003*"희망/nng"\x1b[0m')
+[2019-10-30 15:19:36,677] {logging_mixin.py:112} WARNING - --- Logging error ---
+[2019-10-30 15:19:36,677] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:36,677] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 1034, in emit
+    msg = self.format(record)
+[2019-10-30 15:19:36,677] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 880, in format
+    return fmt.format(record)
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/log/colored_log.py", line 92, in format
+    return super(CustomTTYColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/colorlog/colorlog.py", line 119, in format
+    message = super(ColoredFormatter, self).format(record)
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 619, in format
+    record.message = record.getMessage()
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/logging/__init__.py", line 380, in getMessage
+    msg = msg % self.args
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING - TypeError: %i format: a number is required, not str
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING - Call stack:
+[2019-10-30 15:19:36,678] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+    args.func(args)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+    return f(*args, **kwargs)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+    _run(args, dag, ti)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+    pool=args.pool,
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+    return func(*args, **kwargs)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 54, in data_modeling_module
+    return DF.Topic_Num_Decision_Plt(5, 21, 5)
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 51, in Topic_Num_Decision_Plt
+    start, stop, size
+[2019-10-30 15:19:36,679] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/airflow/dags/KimsModule/Topic_Modeling_LDA_TF_IDF.py", line 31, in Topic_Num_Decision
+    self.corpus, num_topics=num_topics, id2word=self.dictionary
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 519, in __init__
+    self.update(corpus, chunks_as_numpy=use_numpy)
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 994, in update
+    self.do_mstep(rho(), other, pass_ > 0)
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1047, in do_mstep
+    self.print_topics(5)
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/basemodel.py", line 36, in print_topics
+    return self.show_topics(num_topics=num_topics, num_words=num_words, log=True)
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/gensim/models/ldamodel.py", line 1171, in show_topics
+    logger.info("topic #%i (%.3f): %s", i, self.alpha[i], topic_)
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} WARNING - Message: 'topic #%i (%.3f): %s'
+Arguments: ('\x1b[1m4\x1b[0m', '\x1b[1m0.05\x1b[0m', '\x1b[1m0.009*"대출/nng" + 0.005*"금리/nng" + 0.004*"고객/nng" + 0.004*"그룹/nng" + 0.004*"담보대출/nng" + 0.004*"연계/nng" + 0.003*"확장/nng" + 0.003*"오픈api/nng" + 0.003*"금융서비스/nng" + 0.003*"조회/nng"\x1b[0m')
+[2019-10-30 15:19:36,680] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,680] {ldamodel.py:1049} INFO - topic diff=16.096931, rho=1.000000
+[2019-10-30 15:19:36,687] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,687] {probability_estimation.py:155} INFO - using ParallelWordOccurrenceAccumulator(processes=3, batch_size=64) to estimate probabilities from sliding windows
+[2019-10-30 15:19:36,719] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,718] {text_analysis.py:506} INFO - 1 batches submitted to accumulate stats from 64 documents (2416 virtual)
+[2019-10-30 15:19:36,724] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,722] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:36,724] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,722] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:36,732] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,725] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:36,732] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,725] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:36,995] {logging_mixin.py:112} INFO - [2019-10-30 15:19:36,994] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993837 s
+[2019-10-30 15:19:37,868] {logging_mixin.py:112} INFO - [2019-10-30 15:19:37,866] {text_analysis.py:600} INFO - serializing accumulator to return to master...
+[2019-10-30 15:19:37,869] {logging_mixin.py:112} INFO - [2019-10-30 15:19:37,869] {text_analysis.py:602} INFO - accumulator serialized
+[2019-10-30 15:19:37,957] {logging_mixin.py:112} INFO - [2019-10-30 15:19:37,957] {text_analysis.py:530} INFO - 3 accumulators retrieved from output queue
+[2019-10-30 15:19:37,959] {taskinstance.py:905} ERROR - Received SIGTERM. Terminating subprocesses.
+[2019-10-30 15:19:37,968] {logging_mixin.py:112} WARNING - Traceback (most recent call last):
+[2019-10-30 15:19:37,969] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/util.py", line 265, in _run_finalizers
+    finalizer()
+[2019-10-30 15:19:37,969] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/util.py", line 189, in __call__
+    res = self._callback(*self._args, **self._kwargs)
+[2019-10-30 15:19:37,970] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/multiprocessing/queues.py", line 192, in _finalize_join
+    thread.join()
+[2019-10-30 15:19:37,970] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/threading.py", line 1032, in join
+    self._wait_for_tstate_lock()
+[2019-10-30 15:19:37,970] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/threading.py", line 1048, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+[2019-10-30 15:19:37,971] {logging_mixin.py:112} WARNING -   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 907, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+[2019-10-30 15:19:37,971] {logging_mixin.py:112} WARNING - airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2019-10-30 15:19:37,996] {logging_mixin.py:112} INFO - [2019-10-30 15:19:37,996] {text_analysis.py:552} INFO - accumulated word occurrence stats for 2630 virtual documents
+[2019-10-30 15:19:42,006] {logging_mixin.py:112} INFO - [2019-10-30 15:19:42,006] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994133 s
+[2019-10-30 15:19:44,102] {logging_mixin.py:112} INFO - [2019-10-30 15:19:44,102] {ldamodel.py:824} INFO - -16.490 per-word bound, 92040.7 perplexity estimate based on a held-out corpus of 28 documents with 202 words
+[2019-10-30 15:19:44,103] {logging_mixin.py:112} INFO - 20
+[2019-10-30 15:19:47,017] {logging_mixin.py:112} INFO - [2019-10-30 15:19:47,016] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994718 s
+[2019-10-30 15:19:52,031] {logging_mixin.py:112} INFO - [2019-10-30 15:19:52,031] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994614 s
+[2019-10-30 15:19:57,045] {logging_mixin.py:112} INFO - [2019-10-30 15:19:57,045] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993598 s
+[2019-10-30 15:20:02,059] {logging_mixin.py:112} INFO - [2019-10-30 15:20:02,059] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993614 s
+[2019-10-30 15:20:07,073] {logging_mixin.py:112} INFO - [2019-10-30 15:20:07,072] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993615 s
+[2019-10-30 15:20:12,084] {logging_mixin.py:112} INFO - [2019-10-30 15:20:12,084] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993941 s
+[2019-10-30 15:20:17,096] {logging_mixin.py:112} INFO - [2019-10-30 15:20:17,096] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992776 s
+[2019-10-30 15:20:22,109] {logging_mixin.py:112} INFO - [2019-10-30 15:20:22,108] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994068 s
+[2019-10-30 15:20:27,125] {logging_mixin.py:112} INFO - [2019-10-30 15:20:27,124] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992984 s
+[2019-10-30 15:20:32,149] {logging_mixin.py:112} INFO - [2019-10-30 15:20:32,148] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993987 s
+[2019-10-30 15:20:37,158] {logging_mixin.py:112} INFO - [2019-10-30 15:20:37,158] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993534 s
+[2019-10-30 15:20:42,171] {logging_mixin.py:112} INFO - [2019-10-30 15:20:42,170] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993735 s
+[2019-10-30 15:20:47,182] {logging_mixin.py:112} INFO - [2019-10-30 15:20:47,182] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993198 s
+[2019-10-30 15:20:52,195] {logging_mixin.py:112} INFO - [2019-10-30 15:20:52,195] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993705 s
+[2019-10-30 15:20:57,207] {logging_mixin.py:112} INFO - [2019-10-30 15:20:57,206] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993896 s
+[2019-10-30 15:21:02,217] {logging_mixin.py:112} INFO - [2019-10-30 15:21:02,217] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994416 s
+[2019-10-30 15:21:07,231] {logging_mixin.py:112} INFO - [2019-10-30 15:21:07,231] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993002 s
+[2019-10-30 15:21:12,243] {logging_mixin.py:112} INFO - [2019-10-30 15:21:12,243] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993711 s
+[2019-10-30 15:21:17,252] {logging_mixin.py:112} INFO - [2019-10-30 15:21:17,252] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993681 s
+[2019-10-30 15:21:22,267] {logging_mixin.py:112} INFO - [2019-10-30 15:21:22,267] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99282 s
+[2019-10-30 15:21:27,275] {logging_mixin.py:112} INFO - [2019-10-30 15:21:27,275] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993163 s
+[2019-10-30 15:21:32,282] {logging_mixin.py:112} INFO - [2019-10-30 15:21:32,282] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994746 s
+[2019-10-30 15:21:37,294] {logging_mixin.py:112} INFO - [2019-10-30 15:21:37,294] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993906 s
+[2019-10-30 15:21:42,302] {logging_mixin.py:112} INFO - [2019-10-30 15:21:42,302] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993929 s
+[2019-10-30 15:21:47,317] {logging_mixin.py:112} INFO - [2019-10-30 15:21:47,316] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993177 s
+[2019-10-30 15:21:52,324] {logging_mixin.py:112} INFO - [2019-10-30 15:21:52,323] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994762 s
+[2019-10-30 15:21:57,335] {logging_mixin.py:112} INFO - [2019-10-30 15:21:57,335] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993935 s
+[2019-10-30 15:22:02,347] {logging_mixin.py:112} INFO - [2019-10-30 15:22:02,347] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993496 s
+[2019-10-30 15:22:07,356] {logging_mixin.py:112} INFO - [2019-10-30 15:22:07,356] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99418 s
+[2019-10-30 15:22:12,371] {logging_mixin.py:112} INFO - [2019-10-30 15:22:12,371] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991658 s
+[2019-10-30 15:22:17,383] {logging_mixin.py:112} INFO - [2019-10-30 15:22:17,383] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993524 s
+[2019-10-30 15:22:22,395] {logging_mixin.py:112} INFO - [2019-10-30 15:22:22,395] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993459 s
+[2019-10-30 15:22:27,406] {logging_mixin.py:112} INFO - [2019-10-30 15:22:27,406] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993278 s
+[2019-10-30 15:22:32,413] {logging_mixin.py:112} INFO - [2019-10-30 15:22:32,413] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994788 s
+[2019-10-30 15:22:37,425] {logging_mixin.py:112} INFO - [2019-10-30 15:22:37,425] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992698 s
+[2019-10-30 15:22:42,436] {logging_mixin.py:112} INFO - [2019-10-30 15:22:42,436] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994668 s
+[2019-10-30 15:22:47,449] {logging_mixin.py:112} INFO - [2019-10-30 15:22:47,449] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994036 s
+[2019-10-30 15:22:52,498] {logging_mixin.py:112} INFO - [2019-10-30 15:22:52,498] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993886 s
+[2019-10-30 15:22:57,507] {logging_mixin.py:112} INFO - [2019-10-30 15:22:57,507] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99406 s
+[2019-10-30 15:23:02,520] {logging_mixin.py:112} INFO - [2019-10-30 15:23:02,520] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992609 s
+[2019-10-30 15:23:07,531] {logging_mixin.py:112} INFO - [2019-10-30 15:23:07,531] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994086 s
+[2019-10-30 15:23:12,545] {logging_mixin.py:112} INFO - [2019-10-30 15:23:12,545] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99335 s
+[2019-10-30 15:23:17,558] {logging_mixin.py:112} INFO - [2019-10-30 15:23:17,558] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994118 s
+[2019-10-30 15:23:22,569] {logging_mixin.py:112} INFO - [2019-10-30 15:23:22,569] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993942 s
+[2019-10-30 15:23:27,581] {logging_mixin.py:112} INFO - [2019-10-30 15:23:27,581] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994025 s
+[2019-10-30 15:23:32,594] {logging_mixin.py:112} INFO - [2019-10-30 15:23:32,594] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994074 s
+[2019-10-30 15:23:37,604] {logging_mixin.py:112} INFO - [2019-10-30 15:23:37,604] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993954 s
+[2019-10-30 15:23:42,620] {logging_mixin.py:112} INFO - [2019-10-30 15:23:42,619] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994007 s
+[2019-10-30 15:23:47,631] {logging_mixin.py:112} INFO - [2019-10-30 15:23:47,631] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994142 s
+[2019-10-30 15:23:52,645] {logging_mixin.py:112} INFO - [2019-10-30 15:23:52,645] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993918 s
+[2019-10-30 15:23:57,658] {logging_mixin.py:112} INFO - [2019-10-30 15:23:57,658] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99358 s
+[2019-10-30 15:24:02,669] {logging_mixin.py:112} INFO - [2019-10-30 15:24:02,668] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993966 s
+[2019-10-30 15:24:07,678] {logging_mixin.py:112} INFO - [2019-10-30 15:24:07,677] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993781 s
+[2019-10-30 15:24:12,689] {logging_mixin.py:112} INFO - [2019-10-30 15:24:12,689] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994065 s
+[2019-10-30 15:24:17,698] {logging_mixin.py:112} INFO - [2019-10-30 15:24:17,698] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99438 s
+[2019-10-30 15:24:22,713] {logging_mixin.py:112} INFO - [2019-10-30 15:24:22,712] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993595 s
+[2019-10-30 15:24:27,719] {logging_mixin.py:112} INFO - [2019-10-30 15:24:27,719] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994408 s
+[2019-10-30 15:24:32,730] {logging_mixin.py:112} INFO - [2019-10-30 15:24:32,730] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993748 s
+[2019-10-30 15:24:37,745] {logging_mixin.py:112} INFO - [2019-10-30 15:24:37,744] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993847 s
+[2019-10-30 15:24:42,755] {logging_mixin.py:112} INFO - [2019-10-30 15:24:42,754] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993749 s
+[2019-10-30 15:24:47,769] {logging_mixin.py:112} INFO - [2019-10-30 15:24:47,769] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993374 s
+[2019-10-30 15:24:52,777] {logging_mixin.py:112} INFO - [2019-10-30 15:24:52,777] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993975 s
+[2019-10-30 15:24:57,788] {logging_mixin.py:112} INFO - [2019-10-30 15:24:57,788] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994059 s
+[2019-10-30 15:25:02,801] {logging_mixin.py:112} INFO - [2019-10-30 15:25:02,801] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994 s
+[2019-10-30 15:25:07,814] {logging_mixin.py:112} INFO - [2019-10-30 15:25:07,813] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.9926 s
+[2019-10-30 15:25:12,821] {logging_mixin.py:112} INFO - [2019-10-30 15:25:12,821] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994411 s
+[2019-10-30 15:25:17,830] {logging_mixin.py:112} INFO - [2019-10-30 15:25:17,830] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993689 s
+[2019-10-30 15:25:22,840] {logging_mixin.py:112} INFO - [2019-10-30 15:25:22,839] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993941 s
+[2019-10-30 15:25:27,854] {logging_mixin.py:112} INFO - [2019-10-30 15:25:27,854] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993435 s
+[2019-10-30 15:25:32,870] {logging_mixin.py:112} INFO - [2019-10-30 15:25:32,870] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993964 s
+[2019-10-30 15:25:37,880] {logging_mixin.py:112} INFO - [2019-10-30 15:25:37,880] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99414 s
+[2019-10-30 15:25:42,893] {logging_mixin.py:112} INFO - [2019-10-30 15:25:42,893] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994103 s
+[2019-10-30 15:25:47,903] {logging_mixin.py:112} INFO - [2019-10-30 15:25:47,903] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99356 s
+[2019-10-30 15:25:52,913] {logging_mixin.py:112} INFO - [2019-10-30 15:25:52,912] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993981 s
+[2019-10-30 15:25:57,924] {logging_mixin.py:112} INFO - [2019-10-30 15:25:57,924] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993968 s
+[2019-10-30 15:26:02,934] {logging_mixin.py:112} INFO - [2019-10-30 15:26:02,934] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994416 s
+[2019-10-30 15:26:07,944] {logging_mixin.py:112} INFO - [2019-10-30 15:26:07,944] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993668 s
+[2019-10-30 15:26:12,956] {logging_mixin.py:112} INFO - [2019-10-30 15:26:12,956] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993868 s
+[2019-10-30 15:26:17,969] {logging_mixin.py:112} INFO - [2019-10-30 15:26:17,969] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993456 s
+[2019-10-30 15:26:22,979] {logging_mixin.py:112} INFO - [2019-10-30 15:26:22,979] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993852 s
+[2019-10-30 15:26:27,991] {logging_mixin.py:112} INFO - [2019-10-30 15:26:27,991] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993688 s
+[2019-10-30 15:26:33,001] {logging_mixin.py:112} INFO - [2019-10-30 15:26:33,001] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993763 s
+[2019-10-30 15:26:38,013] {logging_mixin.py:112} INFO - [2019-10-30 15:26:38,013] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993918 s
+[2019-10-30 15:26:43,026] {logging_mixin.py:112} INFO - [2019-10-30 15:26:43,026] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994199 s
+[2019-10-30 15:26:48,036] {logging_mixin.py:112} INFO - [2019-10-30 15:26:48,035] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993486 s
+[2019-10-30 15:26:53,046] {logging_mixin.py:112} INFO - [2019-10-30 15:26:53,046] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993747 s
+[2019-10-30 15:26:58,055] {logging_mixin.py:112} INFO - [2019-10-30 15:26:58,055] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99421 s
+[2019-10-30 15:27:03,066] {logging_mixin.py:112} INFO - [2019-10-30 15:27:03,066] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994811 s
+[2019-10-30 15:27:08,082] {logging_mixin.py:112} INFO - [2019-10-30 15:27:08,082] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993987 s
+[2019-10-30 15:27:13,094] {logging_mixin.py:112} INFO - [2019-10-30 15:27:13,094] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994259 s
+[2019-10-30 15:27:18,107] {logging_mixin.py:112} INFO - [2019-10-30 15:27:18,107] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993738 s
+[2019-10-30 15:27:23,120] {logging_mixin.py:112} INFO - [2019-10-30 15:27:23,120] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992889 s
+[2019-10-30 15:27:28,129] {logging_mixin.py:112} INFO - [2019-10-30 15:27:28,129] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994185 s
+[2019-10-30 15:27:33,139] {logging_mixin.py:112} INFO - [2019-10-30 15:27:33,139] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994108 s
+[2019-10-30 15:27:38,149] {logging_mixin.py:112} INFO - [2019-10-30 15:27:38,149] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99382 s
+[2019-10-30 15:27:43,160] {logging_mixin.py:112} INFO - [2019-10-30 15:27:43,159] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99321 s
+[2019-10-30 15:27:48,169] {logging_mixin.py:112} INFO - [2019-10-30 15:27:48,168] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993974 s
+[2019-10-30 15:27:53,178] {logging_mixin.py:112} INFO - [2019-10-30 15:27:53,178] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993918 s
+[2019-10-30 15:27:58,193] {logging_mixin.py:112} INFO - [2019-10-30 15:27:58,193] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994154 s
+[2019-10-30 15:28:03,208] {logging_mixin.py:112} INFO - [2019-10-30 15:28:03,208] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993299 s
+[2019-10-30 15:28:08,219] {logging_mixin.py:112} INFO - [2019-10-30 15:28:08,219] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994217 s
+[2019-10-30 15:28:13,237] {logging_mixin.py:112} INFO - [2019-10-30 15:28:13,237] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993949 s
+[2019-10-30 15:28:18,258] {logging_mixin.py:112} INFO - [2019-10-30 15:28:18,258] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992149 s
+[2019-10-30 15:28:23,274] {logging_mixin.py:112} INFO - [2019-10-30 15:28:23,274] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991412 s
+[2019-10-30 15:28:28,283] {logging_mixin.py:112} INFO - [2019-10-30 15:28:28,283] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993354 s
+[2019-10-30 15:28:33,296] {logging_mixin.py:112} INFO - [2019-10-30 15:28:33,296] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993973 s
+[2019-10-30 15:28:38,307] {logging_mixin.py:112} INFO - [2019-10-30 15:28:38,307] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99317 s
+[2019-10-30 15:28:43,321] {logging_mixin.py:112} INFO - [2019-10-30 15:28:43,321] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991464 s
+[2019-10-30 15:28:48,340] {logging_mixin.py:112} INFO - [2019-10-30 15:28:48,340] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993831 s
+[2019-10-30 15:28:53,354] {logging_mixin.py:112} INFO - [2019-10-30 15:28:53,354] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992677 s
+[2019-10-30 15:28:58,372] {logging_mixin.py:112} INFO - [2019-10-30 15:28:58,371] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992803 s
+[2019-10-30 15:29:03,388] {logging_mixin.py:112} INFO - [2019-10-30 15:29:03,388] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993344 s
+[2019-10-30 15:29:08,398] {logging_mixin.py:112} INFO - [2019-10-30 15:29:08,397] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99357 s
+[2019-10-30 15:29:13,407] {logging_mixin.py:112} INFO - [2019-10-30 15:29:13,407] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993939 s
+[2019-10-30 15:29:18,421] {logging_mixin.py:112} INFO - [2019-10-30 15:29:18,421] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993998 s
+[2019-10-30 15:29:23,433] {logging_mixin.py:112} INFO - [2019-10-30 15:29:23,433] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993325 s
+[2019-10-30 15:29:28,443] {logging_mixin.py:112} INFO - [2019-10-30 15:29:28,442] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994254 s
+[2019-10-30 15:29:33,452] {logging_mixin.py:112} INFO - [2019-10-30 15:29:33,451] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993697 s
+[2019-10-30 15:29:38,468] {logging_mixin.py:112} INFO - [2019-10-30 15:29:38,468] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993947 s
+[2019-10-30 15:29:43,484] {logging_mixin.py:112} INFO - [2019-10-30 15:29:43,483] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993201 s
+[2019-10-30 15:29:48,499] {logging_mixin.py:112} INFO - [2019-10-30 15:29:48,499] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994629 s
+[2019-10-30 15:29:53,519] {logging_mixin.py:112} INFO - [2019-10-30 15:29:53,519] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993901 s
+[2019-10-30 15:29:58,530] {logging_mixin.py:112} INFO - [2019-10-30 15:29:58,530] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993324 s
+[2019-10-30 15:30:03,544] {logging_mixin.py:112} INFO - [2019-10-30 15:30:03,544] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99439 s
+[2019-10-30 15:30:08,553] {logging_mixin.py:112} INFO - [2019-10-30 15:30:08,553] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994109 s
+[2019-10-30 15:30:13,570] {logging_mixin.py:112} INFO - [2019-10-30 15:30:13,569] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99396 s
+[2019-10-30 15:30:18,588] {logging_mixin.py:112} INFO - [2019-10-30 15:30:18,587] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993861 s
+[2019-10-30 15:30:23,599] {logging_mixin.py:112} INFO - [2019-10-30 15:30:23,599] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994119 s
+[2019-10-30 15:30:28,608] {logging_mixin.py:112} INFO - [2019-10-30 15:30:28,608] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993898 s
+[2019-10-30 15:30:33,620] {logging_mixin.py:112} INFO - [2019-10-30 15:30:33,620] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994232 s
+[2019-10-30 15:30:38,639] {logging_mixin.py:112} INFO - [2019-10-30 15:30:38,639] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993951 s
+[2019-10-30 15:30:43,655] {logging_mixin.py:112} INFO - [2019-10-30 15:30:43,654] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993676 s
+[2019-10-30 15:30:48,670] {logging_mixin.py:112} INFO - [2019-10-30 15:30:48,670] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993732 s
+[2019-10-30 15:30:53,681] {logging_mixin.py:112} INFO - [2019-10-30 15:30:53,681] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993984 s
+[2019-10-30 15:30:58,698] {logging_mixin.py:112} INFO - [2019-10-30 15:30:58,698] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.989317 s
+[2019-10-30 15:31:03,707] {logging_mixin.py:112} INFO - [2019-10-30 15:31:03,707] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993638 s
+[2019-10-30 15:31:08,745] {logging_mixin.py:112} INFO - [2019-10-30 15:31:08,744] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99394 s
+[2019-10-30 15:31:13,755] {logging_mixin.py:112} INFO - [2019-10-30 15:31:13,755] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993993 s
+[2019-10-30 15:31:18,776] {logging_mixin.py:112} INFO - [2019-10-30 15:31:18,776] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992592 s
+[2019-10-30 15:31:23,784] {logging_mixin.py:112} INFO - [2019-10-30 15:31:23,783] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994135 s
+[2019-10-30 15:31:28,798] {logging_mixin.py:112} INFO - [2019-10-30 15:31:28,798] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.9936 s
+[2019-10-30 15:31:33,808] {logging_mixin.py:112} INFO - [2019-10-30 15:31:33,807] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994072 s
+[2019-10-30 15:31:38,819] {logging_mixin.py:112} INFO - [2019-10-30 15:31:38,818] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994087 s
+[2019-10-30 15:31:43,834] {logging_mixin.py:112} INFO - [2019-10-30 15:31:43,834] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994108 s
+[2019-10-30 15:31:48,853] {logging_mixin.py:112} INFO - [2019-10-30 15:31:48,852] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994046 s
+[2019-10-30 15:31:53,870] {logging_mixin.py:112} INFO - [2019-10-30 15:31:53,870] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994139 s
+[2019-10-30 15:31:58,886] {logging_mixin.py:112} INFO - [2019-10-30 15:31:58,886] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993495 s
+[2019-10-30 15:32:03,895] {logging_mixin.py:112} INFO - [2019-10-30 15:32:03,895] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994027 s
+[2019-10-30 15:32:08,905] {logging_mixin.py:112} INFO - [2019-10-30 15:32:08,905] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993831 s
+[2019-10-30 15:32:13,921] {logging_mixin.py:112} INFO - [2019-10-30 15:32:13,921] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993936 s
+[2019-10-30 15:32:18,939] {logging_mixin.py:112} INFO - [2019-10-30 15:32:18,939] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993349 s
+[2019-10-30 15:32:23,954] {logging_mixin.py:112} INFO - [2019-10-30 15:32:23,954] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99422 s
+[2019-10-30 15:32:28,970] {logging_mixin.py:112} INFO - [2019-10-30 15:32:28,970] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993841 s
+[2019-10-30 15:32:33,981] {logging_mixin.py:112} INFO - [2019-10-30 15:32:33,981] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993952 s
+[2019-10-30 15:32:38,994] {logging_mixin.py:112} INFO - [2019-10-30 15:32:38,994] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993392 s
+[2019-10-30 15:32:44,008] {logging_mixin.py:112} INFO - [2019-10-30 15:32:44,008] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993987 s
+[2019-10-30 15:32:49,018] {logging_mixin.py:112} INFO - [2019-10-30 15:32:49,018] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994217 s
+[2019-10-30 15:32:54,035] {logging_mixin.py:112} INFO - [2019-10-30 15:32:54,035] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993309 s
+[2019-10-30 15:32:59,054] {logging_mixin.py:112} INFO - [2019-10-30 15:32:59,053] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993281 s
+[2019-10-30 15:33:04,070] {logging_mixin.py:112} INFO - [2019-10-30 15:33:04,069] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994201 s
+[2019-10-30 15:33:09,081] {logging_mixin.py:112} INFO - [2019-10-30 15:33:09,081] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994949 s
+[2019-10-30 15:33:14,101] {logging_mixin.py:112} INFO - [2019-10-30 15:33:14,100] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993868 s
+[2019-10-30 15:33:19,120] {logging_mixin.py:112} INFO - [2019-10-30 15:33:19,120] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994066 s
+[2019-10-30 15:33:24,133] {logging_mixin.py:112} INFO - [2019-10-30 15:33:24,132] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993749 s
+[2019-10-30 15:33:29,150] {logging_mixin.py:112} INFO - [2019-10-30 15:33:29,150] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993761 s
+[2019-10-30 15:33:34,161] {logging_mixin.py:112} INFO - [2019-10-30 15:33:34,160] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993415 s
+[2019-10-30 15:33:39,170] {logging_mixin.py:112} INFO - [2019-10-30 15:33:39,169] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993922 s
+[2019-10-30 15:33:44,180] {logging_mixin.py:112} INFO - [2019-10-30 15:33:44,180] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993923 s
+[2019-10-30 15:33:49,194] {logging_mixin.py:112} INFO - [2019-10-30 15:33:49,193] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994308 s
+[2019-10-30 15:33:54,209] {logging_mixin.py:112} INFO - [2019-10-30 15:33:54,209] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994109 s
+[2019-10-30 15:33:59,219] {logging_mixin.py:112} INFO - [2019-10-30 15:33:59,219] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99325 s
+[2019-10-30 15:34:04,234] {logging_mixin.py:112} INFO - [2019-10-30 15:34:04,234] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993918 s
+[2019-10-30 15:34:09,255] {logging_mixin.py:112} INFO - [2019-10-30 15:34:09,255] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993235 s
+[2019-10-30 15:34:14,274] {logging_mixin.py:112} INFO - [2019-10-30 15:34:14,274] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993118 s
+[2019-10-30 15:34:19,283] {logging_mixin.py:112} INFO - [2019-10-30 15:34:19,283] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993154 s
+[2019-10-30 15:34:24,298] {logging_mixin.py:112} INFO - [2019-10-30 15:34:24,298] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994277 s
+[2019-10-30 15:34:29,316] {logging_mixin.py:112} INFO - [2019-10-30 15:34:29,316] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99331 s
+[2019-10-30 15:34:34,329] {logging_mixin.py:112} INFO - [2019-10-30 15:34:34,328] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993087 s
+[2019-10-30 15:34:39,345] {logging_mixin.py:112} INFO - [2019-10-30 15:34:39,344] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993796 s
+[2019-10-30 15:34:44,355] {logging_mixin.py:112} INFO - [2019-10-30 15:34:44,355] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993604 s
+[2019-10-30 15:34:49,369] {logging_mixin.py:112} INFO - [2019-10-30 15:34:49,369] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993718 s
+[2019-10-30 15:34:54,419] {logging_mixin.py:112} INFO - [2019-10-30 15:34:54,419] {local_task_job.py:124} WARNING - Time since last heartbeat(0.02 s) < heartrate(5.0 s), sleeping for 4.98196 s
+[2019-10-30 15:34:59,421] {logging_mixin.py:112} INFO - [2019-10-30 15:34:59,421] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994198 s
+[2019-10-30 15:35:04,433] {logging_mixin.py:112} INFO - [2019-10-30 15:35:04,433] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994132 s
+[2019-10-30 15:35:09,450] {logging_mixin.py:112} INFO - [2019-10-30 15:35:09,450] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994106 s
+[2019-10-30 15:35:14,466] {logging_mixin.py:112} INFO - [2019-10-30 15:35:14,466] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993965 s
+[2019-10-30 15:35:19,480] {logging_mixin.py:112} INFO - [2019-10-30 15:35:19,480] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99243 s
+[2019-10-30 15:35:24,495] {logging_mixin.py:112} INFO - [2019-10-30 15:35:24,495] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993801 s
+[2019-10-30 15:35:29,508] {logging_mixin.py:112} INFO - [2019-10-30 15:35:29,507] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993753 s
+[2019-10-30 15:35:34,526] {logging_mixin.py:112} INFO - [2019-10-30 15:35:34,525] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993698 s
+[2019-10-30 15:35:39,542] {logging_mixin.py:112} INFO - [2019-10-30 15:35:39,542] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.9947 s
+[2019-10-30 15:35:44,553] {logging_mixin.py:112} INFO - [2019-10-30 15:35:44,553] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994625 s
+[2019-10-30 15:35:49,572] {logging_mixin.py:112} INFO - [2019-10-30 15:35:49,572] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993998 s
+[2019-10-30 15:35:54,583] {logging_mixin.py:112} INFO - [2019-10-30 15:35:54,583] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993357 s
+[2019-10-30 15:35:59,598] {logging_mixin.py:112} INFO - [2019-10-30 15:35:59,598] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993776 s
+[2019-10-30 15:36:04,610] {logging_mixin.py:112} INFO - [2019-10-30 15:36:04,610] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994111 s
+[2019-10-30 15:36:09,623] {logging_mixin.py:112} INFO - [2019-10-30 15:36:09,623] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993967 s
+[2019-10-30 15:36:14,640] {logging_mixin.py:112} INFO - [2019-10-30 15:36:14,640] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993527 s
+[2019-10-30 15:36:19,652] {logging_mixin.py:112} INFO - [2019-10-30 15:36:19,651] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994071 s
+[2019-10-30 15:36:24,664] {logging_mixin.py:112} INFO - [2019-10-30 15:36:24,664] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993898 s
+[2019-10-30 15:36:29,675] {logging_mixin.py:112} INFO - [2019-10-30 15:36:29,675] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994019 s
+[2019-10-30 15:36:34,695] {logging_mixin.py:112} INFO - [2019-10-30 15:36:34,695] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993567 s
+[2019-10-30 15:36:39,715] {logging_mixin.py:112} INFO - [2019-10-30 15:36:39,715] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.990301 s
+[2019-10-30 15:36:44,725] {logging_mixin.py:112} INFO - [2019-10-30 15:36:44,725] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993938 s
+[2019-10-30 15:36:49,737] {logging_mixin.py:112} INFO - [2019-10-30 15:36:49,737] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994138 s
+[2019-10-30 15:36:54,753] {logging_mixin.py:112} INFO - [2019-10-30 15:36:54,753] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993343 s
+[2019-10-30 15:36:59,771] {logging_mixin.py:112} INFO - [2019-10-30 15:36:59,771] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993941 s
+[2019-10-30 15:37:04,784] {logging_mixin.py:112} INFO - [2019-10-30 15:37:04,784] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994252 s
+[2019-10-30 15:37:09,794] {logging_mixin.py:112} INFO - [2019-10-30 15:37:09,794] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994067 s
+[2019-10-30 15:37:14,806] {logging_mixin.py:112} INFO - [2019-10-30 15:37:14,806] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99327 s
+[2019-10-30 15:37:19,823] {logging_mixin.py:112} INFO - [2019-10-30 15:37:19,823] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993576 s
+[2019-10-30 15:37:24,835] {logging_mixin.py:112} INFO - [2019-10-30 15:37:24,835] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994503 s
+[2019-10-30 15:37:29,850] {logging_mixin.py:112} INFO - [2019-10-30 15:37:29,850] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993656 s
+[2019-10-30 15:37:34,862] {logging_mixin.py:112} INFO - [2019-10-30 15:37:34,862] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994369 s
+[2019-10-30 15:37:39,879] {logging_mixin.py:112} INFO - [2019-10-30 15:37:39,879] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993691 s
+[2019-10-30 15:37:44,892] {logging_mixin.py:112} INFO - [2019-10-30 15:37:44,892] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994545 s
+[2019-10-30 15:37:49,905] {logging_mixin.py:112} INFO - [2019-10-30 15:37:49,904] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993153 s
+[2019-10-30 15:37:54,928] {logging_mixin.py:112} INFO - [2019-10-30 15:37:54,928] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993043 s
+[2019-10-30 15:37:59,944] {logging_mixin.py:112} INFO - [2019-10-30 15:37:59,944] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994108 s
+[2019-10-30 15:38:04,955] {logging_mixin.py:112} INFO - [2019-10-30 15:38:04,955] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994016 s
+[2019-10-30 15:38:09,973] {logging_mixin.py:112} INFO - [2019-10-30 15:38:09,973] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993909 s
+[2019-10-30 15:38:14,991] {logging_mixin.py:112} INFO - [2019-10-30 15:38:14,991] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992839 s
+[2019-10-30 15:38:20,000] {logging_mixin.py:112} INFO - [2019-10-30 15:38:20,000] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994532 s
+[2019-10-30 15:38:25,010] {logging_mixin.py:112} INFO - [2019-10-30 15:38:25,010] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993944 s
+[2019-10-30 15:38:30,025] {logging_mixin.py:112} INFO - [2019-10-30 15:38:30,025] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994004 s
+[2019-10-30 15:38:35,043] {logging_mixin.py:112} INFO - [2019-10-30 15:38:35,043] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993341 s
+[2019-10-30 15:38:40,056] {logging_mixin.py:112} INFO - [2019-10-30 15:38:40,055] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993968 s
+[2019-10-30 15:38:45,074] {logging_mixin.py:112} INFO - [2019-10-30 15:38:45,074] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994066 s
+[2019-10-30 15:38:50,085] {logging_mixin.py:112} INFO - [2019-10-30 15:38:50,085] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994094 s
+[2019-10-30 15:38:55,097] {logging_mixin.py:112} INFO - [2019-10-30 15:38:55,097] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993417 s
+[2019-10-30 15:39:00,105] {logging_mixin.py:112} INFO - [2019-10-30 15:39:00,105] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99371 s
+[2019-10-30 15:39:05,122] {logging_mixin.py:112} INFO - [2019-10-30 15:39:05,122] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993853 s
+[2019-10-30 15:39:10,132] {logging_mixin.py:112} INFO - [2019-10-30 15:39:10,132] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994056 s
+[2019-10-30 15:39:15,151] {logging_mixin.py:112} INFO - [2019-10-30 15:39:15,151] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.98867 s
+[2019-10-30 15:39:20,156] {logging_mixin.py:112} INFO - [2019-10-30 15:39:20,155] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994117 s
+[2019-10-30 15:39:25,173] {logging_mixin.py:112} INFO - [2019-10-30 15:39:25,173] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.9946 s
+[2019-10-30 15:39:30,186] {logging_mixin.py:112} INFO - [2019-10-30 15:39:30,186] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994794 s
+[2019-10-30 15:39:35,200] {logging_mixin.py:112} INFO - [2019-10-30 15:39:35,200] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992718 s
+[2019-10-30 15:39:40,220] {logging_mixin.py:112} INFO - [2019-10-30 15:39:40,219] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.99353 s
+[2019-10-30 15:39:45,239] {logging_mixin.py:112} INFO - [2019-10-30 15:39:45,238] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992895 s
+[2019-10-30 15:39:50,420] {logging_mixin.py:112} INFO - [2019-10-30 15:39:50,416] {local_task_job.py:124} WARNING - Time since last heartbeat(0.07 s) < heartrate(5.0 s), sleeping for 4.933022 s
+[2019-10-30 15:39:55,381] {logging_mixin.py:112} INFO - [2019-10-30 15:39:55,380] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.990176 s
+[2019-10-30 15:39:57,671] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-30 15:40:00,376] {logging_mixin.py:112} INFO - [2019-10-30 15:40:00,373] {local_task_job.py:103} INFO - Task exited with return code 0

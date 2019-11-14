@@ -1,0 +1,204 @@
+[2019-10-30 14:43:21,806] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 14:43:21,818] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 14:43:21,819] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 14:43:21,819] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 14:43:21,819] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 14:43:21,827] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 14:43:21,827] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-29T00:00:00+00:00', '--job_id', '23', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpvw4aj4fi']
+[2019-10-30 14:43:23,282] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module [2019-10-30 14:43:23,281] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 14:43:23,282] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module [2019-10-30 14:43:23,282] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 14:43:24,862] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module [2019-10-30 14:43:24,861] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 14:43:24,871] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 14:43:24,872] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-30 14:43:26,792] {logging_mixin.py:112} INFO - [2019-10-30 14:43:26,792] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994822 s
+[2019-10-30 14:43:27,966] {taskinstance.py:1058} ERROR - [Errno 2] No such file or directory: './data/news_data/news_key_words_add.csv'
+Traceback (most recent call last):
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 23, in news_collect_module
+    "./data/news_data/news_key_words_add.csv", encoding="utf-8", index=False
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py", line 3020, in to_csv
+    formatter.save()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 157, in save
+    compression=self.compression)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/common.py", line 424, in _get_handle
+    f = open(path_or_buf, mode, encoding=encoding, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: './data/news_data/news_key_words_add.csv'
+[2019-10-30 14:43:27,979] {taskinstance.py:1089} INFO - Marking task as FAILED.
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module Traceback (most recent call last):
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     args.func(args)
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     return f(*args, **kwargs)
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     _run(args, dag, ti)
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     pool=args.pool,
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     return func(*args, **kwargs)
+[2019-10-30 14:43:27,995] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     result = task_copy.execute(context=context)
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     return_value = self.execute_callable()
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 23, in news_collect_module
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     "./data/news_data/news_key_words_add.csv", encoding="utf-8", index=False
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py", line 3020, in to_csv
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     formatter.save()
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 157, in save
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     compression=self.compression)
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/common.py", line 424, in _get_handle
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module     f = open(path_or_buf, mode, encoding=encoding, newline="")
+[2019-10-30 14:43:27,996] {base_task_runner.py:115} INFO - Job 23: Subtask news_collect_module FileNotFoundError: [Errno 2] No such file or directory: './data/news_data/news_key_words_add.csv'
+[2019-10-30 14:43:31,794] {logging_mixin.py:112} INFO - [2019-10-30 14:43:31,793] {local_task_job.py:103} INFO - Task exited with return code 1
+[2019-10-30 14:53:12,189] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 14:53:12,218] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 14:53:12,218] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 14:53:12,218] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 14:53:12,218] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 14:53:12,234] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 14:53:12,235] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-29T00:00:00+00:00', '--job_id', '30', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmp1u_kixlz']
+[2019-10-30 14:53:16,668] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module [2019-10-30 14:53:16,667] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 14:53:16,669] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module [2019-10-30 14:53:16,669] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 14:53:17,174] {logging_mixin.py:112} INFO - [2019-10-30 14:53:17,173] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992743 s
+[2019-10-30 14:53:20,627] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module [2019-10-30 14:53:20,627] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 14:53:20,641] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 14:53:20,642] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-30 14:53:21,433] {taskinstance.py:1058} ERROR - [Errno 2] No such file or directory: '../../data/news_data/news_key_words_add.csv'
+Traceback (most recent call last):
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 23, in news_collect_module
+    "../../data/news_data/news_key_words_add.csv", encoding="utf-8", index=False
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py", line 3020, in to_csv
+    formatter.save()
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 157, in save
+    compression=self.compression)
+  File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/common.py", line 424, in _get_handle
+    f = open(path_or_buf, mode, encoding=encoding, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/news_data/news_key_words_add.csv'
+[2019-10-30 14:53:21,442] {taskinstance.py:1089} INFO - Marking task as FAILED.
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module Traceback (most recent call last):
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/bin/airflow", line 37, in <module>
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     args.func(args)
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     return f(*args, **kwargs)
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 551, in run
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     _run(args, dag, ti)
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/bin/cli.py", line 469, in _run
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     pool=args.pool,
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/utils/db.py", line 74, in wrapper
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     return func(*args, **kwargs)
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 930, in _run_raw_task
+[2019-10-30 14:53:21,462] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     result = task_copy.execute(context=context)
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 113, in execute
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     return_value = self.execute_callable()
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     return self.python_callable(*self.op_args, **self.op_kwargs)
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/airflow/dags/kim_flow.py", line 23, in news_collect_module
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     "../../data/news_data/news_key_words_add.csv", encoding="utf-8", index=False
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py", line 3020, in to_csv
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     formatter.save()
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 157, in save
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     compression=self.compression)
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module   File "/Users/hyuninsim/anaconda3/lib/python3.7/site-packages/pandas/io/common.py", line 424, in _get_handle
+[2019-10-30 14:53:21,463] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module     f = open(path_or_buf, mode, encoding=encoding, newline="")
+[2019-10-30 14:53:21,464] {base_task_runner.py:115} INFO - Job 30: Subtask news_collect_module FileNotFoundError: [Errno 2] No such file or directory: '../../data/news_data/news_key_words_add.csv'
+[2019-10-30 14:53:22,168] {logging_mixin.py:112} INFO - [2019-10-30 14:53:22,167] {local_task_job.py:103} INFO - Task exited with return code 1
+[2019-10-30 15:00:22,261] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:00:22,278] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:00:22,278] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:00:22,278] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 15:00:22,278] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:00:22,321] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 15:00:22,321] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-29T00:00:00+00:00', '--job_id', '33', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmp_wa07acp']
+[2019-10-30 15:00:27,214] {logging_mixin.py:112} INFO - [2019-10-30 15:00:27,213] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.991617 s
+[2019-10-30 15:00:27,307] {base_task_runner.py:115} INFO - Job 33: Subtask news_collect_module [2019-10-30 15:00:27,306] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 15:00:27,307] {base_task_runner.py:115} INFO - Job 33: Subtask news_collect_module [2019-10-30 15:00:27,307] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 15:00:32,226] {logging_mixin.py:112} INFO - [2019-10-30 15:00:32,225] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993325 s
+[2019-10-30 15:00:33,621] {base_task_runner.py:115} INFO - Job 33: Subtask news_collect_module [2019-10-30 15:00:33,620] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 15:00:33,639] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 15:00:33,678] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-30 15:00:34,479] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-30 15:00:37,224] {logging_mixin.py:112} INFO - [2019-10-30 15:00:37,223] {local_task_job.py:103} INFO - Task exited with return code 0
+[2019-10-30 15:10:18,010] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:10:18,057] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:10:18,058] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:10:18,058] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 15:10:18,058] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:10:18,204] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 15:10:18,205] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-29T00:00:00+00:00', '--job_id', '34', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmp35it1lhz']
+[2019-10-30 15:10:22,990] {logging_mixin.py:112} INFO - [2019-10-30 15:10:22,989] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993887 s
+[2019-10-30 15:10:24,184] {base_task_runner.py:115} INFO - Job 34: Subtask news_collect_module [2019-10-30 15:10:24,183] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 15:10:24,185] {base_task_runner.py:115} INFO - Job 34: Subtask news_collect_module [2019-10-30 15:10:24,185] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 15:10:28,008] {logging_mixin.py:112} INFO - [2019-10-30 15:10:28,007] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992834 s
+[2019-10-30 15:10:31,653] {base_task_runner.py:115} INFO - Job 34: Subtask news_collect_module [2019-10-30 15:10:31,652] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 15:10:31,666] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 15:10:31,666] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-30 15:10:32,451] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-30 15:10:33,020] {logging_mixin.py:112} INFO - [2019-10-30 15:10:33,019] {local_task_job.py:167} WARNING - State of this instance has been externally set to success. Taking the poison pill.
+[2019-10-30 15:10:33,028] {helpers.py:308} INFO - Sending Signals.SIGTERM to GPID 8299
+[2019-10-30 15:10:33,087] {helpers.py:286} INFO - Process psutil.Process(pid=8299, status='terminated') (8299) terminated with exit code -15
+[2019-10-30 15:10:33,087] {helpers.py:286} INFO - Process psutil.Process(pid=8341, status='terminated') (8341) terminated with exit code None
+[2019-10-30 15:10:33,087] {logging_mixin.py:112} INFO - [2019-10-30 15:10:33,087] {local_task_job.py:124} WARNING - Time since last heartbeat(0.07 s) < heartrate(5.0 s), sleeping for 4.926882 s
+[2019-10-30 15:10:38,016] {logging_mixin.py:112} INFO - [2019-10-30 15:10:38,016] {local_task_job.py:103} INFO - Task exited with return code 0
+[2019-10-30 15:17:36,130] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:17:36,145] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [queued]>
+[2019-10-30 15:17:36,204] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:17:36,204] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-30 15:17:36,204] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-30 15:17:36,220] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-29T00:00:00+00:00
+[2019-10-30 15:17:36,220] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-29T00:00:00+00:00', '--job_id', '35', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpuvhsavga']
+[2019-10-30 15:17:41,124] {logging_mixin.py:112} INFO - [2019-10-30 15:17:41,123] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.992693 s
+[2019-10-30 15:17:42,844] {base_task_runner.py:115} INFO - Job 35: Subtask news_collect_module [2019-10-30 15:17:42,843] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-30 15:17:42,844] {base_task_runner.py:115} INFO - Job 35: Subtask news_collect_module [2019-10-30 15:17:42,844] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-30 15:17:46,136] {logging_mixin.py:112} INFO - [2019-10-30 15:17:46,136] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.993713 s
+[2019-10-30 15:17:49,385] {base_task_runner.py:115} INFO - Job 35: Subtask news_collect_module [2019-10-30 15:17:49,385] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-29T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-30 15:17:49,400] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-29T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-29T00:00:00+00:00
+[2019-10-30 15:17:49,401] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-30 15:17:50,311] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-30 15:17:51,149] {logging_mixin.py:112} INFO - [2019-10-30 15:17:51,148] {local_task_job.py:167} WARNING - State of this instance has been externally set to success. Taking the poison pill.
+[2019-10-30 15:17:51,158] {helpers.py:308} INFO - Sending Signals.SIGTERM to GPID 10392
+[2019-10-30 15:17:51,226] {helpers.py:286} INFO - Process psutil.Process(pid=10392, status='terminated') (10392) terminated with exit code -15
+[2019-10-30 15:17:51,226] {helpers.py:286} INFO - Process psutil.Process(pid=10438, status='terminated') (10438) terminated with exit code None
+[2019-10-30 15:17:51,227] {logging_mixin.py:112} INFO - [2019-10-30 15:17:51,227] {local_task_job.py:124} WARNING - Time since last heartbeat(0.08 s) < heartrate(5.0 s), sleeping for 4.915494 s
+[2019-10-30 15:17:56,145] {logging_mixin.py:112} INFO - [2019-10-30 15:17:56,144] {local_task_job.py:103} INFO - Task exited with return code 0

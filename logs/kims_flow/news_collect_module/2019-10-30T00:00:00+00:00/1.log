@@ -1,0 +1,44 @@
+[2019-10-31 16:32:31,012] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:32:31,024] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:32:31,024] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:32:31,024] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-31 16:32:31,024] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:32:31,032] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-30T00:00:00+00:00
+[2019-10-31 16:32:31,032] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-30T00:00:00+00:00', '--job_id', '40', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmphqqivr19']
+[2019-10-31 16:32:32,491] {base_task_runner.py:115} INFO - Job 40: Subtask news_collect_module [2019-10-31 16:32:32,491] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-31 16:32:32,492] {base_task_runner.py:115} INFO - Job 40: Subtask news_collect_module [2019-10-31 16:32:32,491] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-31 16:32:33,878] {base_task_runner.py:115} INFO - Job 40: Subtask news_collect_module [2019-10-31 16:32:33,877] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-31 16:32:33,889] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-30T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-30T00:00:00+00:00
+[2019-10-31 16:32:33,889] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-31 16:32:33,889] {logging_mixin.py:112} INFO - current: /Users/hyuninsim/airflow
+[2019-10-31 16:32:34,874] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-31 16:32:36,005] {logging_mixin.py:112} INFO - [2019-10-31 16:32:36,004] {local_task_job.py:124} WARNING - Time since last heartbeat(0.00 s) < heartrate(5.0 s), sleeping for 4.995516 s
+[2019-10-31 16:32:41,002] {logging_mixin.py:112} INFO - [2019-10-31 16:32:41,002] {local_task_job.py:103} INFO - Task exited with return code 0
+[2019-10-31 16:37:14,322] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:37:14,332] {taskinstance.py:630} INFO - Dependencies all met for <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [queued]>
+[2019-10-31 16:37:14,332] {taskinstance.py:841} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:37:14,332] {taskinstance.py:842} INFO - Starting attempt 1 of 1
+[2019-10-31 16:37:14,333] {taskinstance.py:843} INFO - 
+--------------------------------------------------------------------------------
+[2019-10-31 16:37:14,339] {taskinstance.py:862} INFO - Executing <Task(PythonOperator): news_collect_module> on 2019-10-30T00:00:00+00:00
+[2019-10-31 16:37:14,339] {base_task_runner.py:133} INFO - Running: ['airflow', 'run', 'kims_flow', 'news_collect_module', '2019-10-30T00:00:00+00:00', '--job_id', '41', '--pool', 'default_pool', '--raw', '-sd', 'DAGS_FOLDER/kim_flow.py', '--cfg_path', '/var/folders/kl/hgsvczsx34q1wqd4l94kdxsh0000gn/T/tmpv8padjrl']
+[2019-10-31 16:37:15,709] {base_task_runner.py:115} INFO - Job 41: Subtask news_collect_module [2019-10-31 16:37:15,708] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-10-31 16:37:15,710] {base_task_runner.py:115} INFO - Job 41: Subtask news_collect_module [2019-10-31 16:37:15,709] {dagbag.py:92} INFO - Filling up the DagBag from /Users/hyuninsim/airflow/dags/kim_flow.py
+[2019-10-31 16:37:17,537] {base_task_runner.py:115} INFO - Job 41: Subtask news_collect_module [2019-10-31 16:37:17,536] {cli.py:545} INFO - Running <TaskInstance: kims_flow.news_collect_module 2019-10-30T00:00:00+00:00 [running]> on host ip-70-12-224-51.kscymo.spcsdns.net
+[2019-10-31 16:37:17,546] {python_operator.py:105} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_ID=kims_flow
+AIRFLOW_CTX_TASK_ID=news_collect_module
+AIRFLOW_CTX_EXECUTION_DATE=2019-10-30T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2019-10-30T00:00:00+00:00
+[2019-10-31 16:37:17,547] {logging_mixin.py:112} INFO - Collecting News..
+[2019-10-31 16:37:17,547] {logging_mixin.py:112} INFO - current: /Users/hyuninsim/airflow
+[2019-10-31 16:37:18,378] {python_operator.py:114} INFO - Done. Returned value was: None
+[2019-10-31 16:37:19,324] {logging_mixin.py:112} INFO - [2019-10-31 16:37:19,324] {local_task_job.py:124} WARNING - Time since last heartbeat(0.01 s) < heartrate(5.0 s), sleeping for 4.994626 s
+[2019-10-31 16:37:24,321] {logging_mixin.py:112} INFO - [2019-10-31 16:37:24,321] {local_task_job.py:103} INFO - Task exited with return code 0
