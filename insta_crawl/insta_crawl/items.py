@@ -11,9 +11,9 @@ import scrapy
 class InstaCrawlItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    text = scrapy.Field()
-    date = scrapy.Field()
-    like_count = scrapy.Field()
-    explain = scrapy.Field()
     each_url = scrapy.Field()
-    max_id = scrapy.Field()
+    each_location = scrapy.Field()
+    address_json = scrapy.Field()
+    hash_tag = scrapy.Field()
+    text = scrapy.Field()
+    idx_name = scrapy.Field()

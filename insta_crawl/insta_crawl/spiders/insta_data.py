@@ -7,18 +7,21 @@ import datetime as dt
 import pandas as pd
 import csv
 
-# from insta_explore.items import InstaCrawlItem ㄴㅏ중에 하즈아ㅏㅏㅏ
+from insta_crawl.items import InstaCrawlItem
 
 
 class InstaDataSpider(scrapy.Spider):
     name = "insta_data"
     allowed_domains = ["www.instagram.com"]
     start_urls = []
-    csvname = "맛스타그램_url"
+    url_dir = "../../data/insta_url/"
+    csvname = "test_url"
 
-    keyword = "키즈카페"
-    max_id = ""
-    url = ""
+    df = pd.read_csv("/Users/hyuninsim/airflow/data/insta_url/" + csvname + ".csv")
+    for each_url in df["each_url"]:
+        print("each_url : " + each_url)
+        shortcode = each_url.split('"')[3]
+        start_urls.append("https://www.instagram.com/p/" + shortcode + "/?__a=1")
 
     def __init__(self):
         self.number = 0
@@ -29,7 +32,8 @@ class InstaDataSpider(scrapy.Spider):
         each_json_data = json.loads(response.body)
 
         print("each_json_data : " + str(each_json_data))
-        # item = InstascrapyEachItem()
+
+        item = InstaCrawlItem()
         item["each_url"] = response.url
 
         url = each_json_data["graphql"]["shortcode_media"]["display_url"]

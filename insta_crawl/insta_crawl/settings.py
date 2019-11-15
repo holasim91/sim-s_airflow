@@ -14,6 +14,7 @@ BOT_NAME = "insta_crawl"
 SPIDER_MODULES = ["insta_crawl.spiders"]
 NEWSPIDER_MODULE = "insta_crawl.spiders"
 
+FEED_EXPORT_ENCODING = "utf-8"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'insta_crawl (+http://www.yourdomain.com)'
@@ -22,7 +23,7 @@ NEWSPIDER_MODULE = "insta_crawl.spiders"
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 64
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -88,3 +89,10 @@ ROBOTSTXT_OBEY = False
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+RETRY_HTTP_CODES = [429, 400]
+
+DOWNLOADER_MIDDLEWARES = {
+    "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
+    "insta_crawl.middlewares.TooManyRequestsRetryMiddleware": 543,
+    "scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware": 810,
+}

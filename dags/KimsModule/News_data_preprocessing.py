@@ -15,7 +15,6 @@ class News_PreProcessing:
         self.news = news
 
     def getStopwords(self):
-        print("WGGGGGGG:", os.getcwd())
         f = open(os.getcwd() + "/dags/KimsModule/stop_wd.txt", "r")
         stop_word = []
 
