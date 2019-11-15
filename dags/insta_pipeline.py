@@ -1,6 +1,10 @@
 from airflow.models import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python_operator import PythonOperator
+
+import HagLeadModule.get_HashTag as ht
+import pandas as pd
 
 args = {"owner": "HiSim", "start_date": days_ago(n=1)}
 dag = DAG(dag_id="Insta_Pipline", default_args=args, schedule_interval="@daily")
@@ -22,12 +26,27 @@ insta_data_cmd = """s
     data_scrapy_dir
 )
 
+
+def get_hashtag_module(**kwargs):
+    print("collecting hash tags...")
+    insta_data = ht.Extract_HashTag(pd.read_csv("./data/insta_data/test_data.csv"))
+    result = insta_data.find_tags()
+    return pd.DataFrame(result).head()
+
+
 insta_url_crawling = BashOperator(
     task_id="insta_url_crawling", bash_command=insta_url_cmd, dag=dag
 )
 
 insta_data_crawling = BashOperator(
     task_id="insta_data_crawling", bash_command=insta_data_cmd, dag=dag
+)
+
+collecting_tag = PythonOperator(
+    task_id="get_hashtag_module",
+    provide_context=True,
+    python_callable=get_hashtag_module,
+    dag=dag,
 )
 
 
